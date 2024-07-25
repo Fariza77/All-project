@@ -1,0 +1,15 @@
+
+#theme{
+    background-color: black;
+
+}
+#darktheme{
+    background-color: blue;
+    color: snow;
+    width: 100px;
+    height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px
+}
