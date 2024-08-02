@@ -1,14 +1,10 @@
-import React from 'react';
-import FirstComp from './components/FirstComp';
-import ThirdComp from './components/ThirdComp';
-
+import React from 'react'
+import './App.scss'
 
 export default function App() {
   return (
-    <div>
-      <FirstComp/>
-      <SecondComp/>
-     <ThirdComp/>
-    </div>
+    <>
+      <h1>Hello World</h1>
+    </>
   )
 }

@@ -1,0 +1,29 @@
+$warning: #FF6600;
+$warning-t: #FF660030;
+
+$dark: #141414;
+$dark-lighter: #1C1C1C;
+
+$light :#FFFFFF;
+$text-color: #6C6C6C;
+
+
+//MIXINS
+@mixin grid($columns: 12, $gap : 20px) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: $gap
+}
+
+//USAGE:
+//@INCLUDE GRID()
+
+@mixin flex($direction:row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//USAGE:
+//@INCLUDE FLEX()
