@@ -8,8 +8,19 @@ function Navbar() {
             <div className="left">
                 <Heading>Fonte</Heading>
             </div>
-            <div className="middle"></div>
-            <div className="right"></div>
+            <div className="middle">
+                <a href="#">О нас</a>
+                <a href="#">Команда</a>
+                <a href="#">Блог</a>
+                <a href="#">Продукты</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div className="right">
+                <button className="warning-btn">Войти</button>
+                <a href="#">
+                    <u>Рус</u>
+                </a>
+            </div>
         </nav>
     );
 }

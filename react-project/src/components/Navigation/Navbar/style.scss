@@ -1,0 +1,26 @@
+@import "../../../assets/styles/settings";
+
+nav {
+    @include grid(3, 5px);
+    justify-content: space-around;
+    padding: 20px 50px;
+
+    .middle {
+        text-align: center;
+        font-size: 0.9em;
+
+        a {
+            &:hover {
+                color: $warning;
+            }
+        }
+    }
+
+    .right {
+        text-align: right;
+
+        button {
+            padding: 10px 30px;
+        }
+    }
+}
