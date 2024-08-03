@@ -2,12 +2,12 @@
 
 nav {
     @include grid(3, 5px);
+    grid-template-columns: 1fr 4fr 1fr;
     justify-content: space-around;
-    padding: 20px 50px;
+    padding: 50px 100px;
 
     .middle {
         text-align: center;
-        font-size: 0.9em;
 
         a {
             &:hover {

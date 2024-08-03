@@ -3,12 +3,16 @@ import './style.scss'
 
 
 function Heading(props) {
+    const fontSize = props.size 
+                         ? (40/props.size)+"px" 
+                         : '40px';
+
     return (
         <div className="heading-wrapper">
-            <h2>
+            <h1 style={{fontSize}}>
                 {props.children}
                 <img src={Vector} alt="Vector" />
-            </h2>
+            </h1>
         </div>
     );
 }

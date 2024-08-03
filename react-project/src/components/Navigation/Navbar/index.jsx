@@ -6,14 +6,16 @@ function Navbar() {
     return (
         <nav>
             <div className="left">
-                <Heading>Fonte</Heading>
+                <Link to="/">
+                    <Heading size={1}>Fonte</Heading>
+                </Link>
             </div>
             <div className="middle">
-                <a href="#">О нас</a>
-                <a href="#">Команда</a>
-                <a href="#">Блог</a>
-                <a href="#">Продукты</a>
-                <a href="#">Контакты</a>
+                <Link to="about">О нас</Link>
+                <Link to="team">Команда</Link>
+                <Link to="blog">Блог</Link>
+                <Link to="products">Продукты</Link>
+                <Link to="contacts">Контакты</Link>
             </div>
             <div className="right">
                 <button className="warning-btn">Войти</button>
