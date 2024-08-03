@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.scss'
 import { BrowserRouter } from 'react-router-dom'
 import AllComponents from "./components/AllComponents.jsx"
 
