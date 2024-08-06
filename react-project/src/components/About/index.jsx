@@ -1,6 +1,6 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import ImageAbout from "../../assets/images/image.png"
+import ImageAbout from "../../assets/images/about.png"
 import { TbLicense } from "react-icons/tb"
 import Marquee from '../common/Marquee'
 
@@ -8,7 +8,7 @@ import Marquee from '../common/Marquee'
 function About() {
   return (
     <main className="about-page-wrapper">
-        <Heading size={1.4}>О нас</Heading>
+      <Heading size={1.4}>О нас</Heading>
 
       <div className="content-wrapper">
         <img src={ImageAbout} alt="ImageAbout" width={"100%"} height={450} />
