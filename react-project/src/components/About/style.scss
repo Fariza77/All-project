@@ -1,14 +1,41 @@
+@import "../../assets/styles/settings";
 
 .about-page-wrapper {
-    padding: 50px 100px;
-}
-.warning-btn{
-    width: 130px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 30px;
-}
-.hr-wrapper{
-    margin-top: 20px;
+    padding: 50px 0;
+
+    .heading-wrapper,
+    .content-wrapper {
+        padding: 0 200px;
+    }
+
+    .content-wrapper {
+        margin: 50px 0;
+        @include grid(2, 50px);
+        grid-template-columns: 1fr 3fr;
+
+        img {
+            filter: grayscale(100%);
+        }
+
+        .info {
+            p {
+                width: 80%;
+                margin-bottom: 30px;
+                font-size: 1.1em;
+                color: lightgray;
+            }
+
+            .warning-btn {
+                padding: 15px 40px;
+                font-size: 1em;
+                @include flex(row, center, center);
+                gap: 10px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }
