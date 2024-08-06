@@ -1,8 +1,8 @@
-import "./style.scss";
-import Heading from "../common/Heading";
-import ImageAbout from "../../assets/images/image.png";
-import { TbLicense } from "react-icons/tb";
-import Rectangle from '../../assets/images/Rectangle.png';
+import "./style.scss"
+import Heading from "../common/Heading"
+import ImageAbout from "../../assets/images/image.png"
+import { TbLicense } from "react-icons/tb"
+import Marquee from '../common/Marquee'
 
 
 function About() {
@@ -24,7 +24,7 @@ function About() {
       </div>
 
       <div className="hr-wrapper">
-        <img src={Rectangle} alt="Rectangle" />
+        <Marquee />
       </div>
     </main>
   );
