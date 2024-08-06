@@ -6,27 +6,27 @@ import { FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer>
-      <div className="flex-div">
-        <div className="heading-wrap">
-          <Heading size={1.2}>Fonte</Heading>
+    <footer className="main-footer">
+      <div className="heading-wrapper">
+        <Heading size={1.2}>Fonte</Heading>
+      </div>
+      <div className="footer-links">
+        <div className="left">
+          <a href="#">О нас</a>
+          <a href="#">Команда</a>
+          <a href="#">Блог</a>
+          <a href="#">Продукты</a>
+          <a href="#">Контакты</a>
         </div>
-        <div className="components-wrapper">
-          <p>О нас</p>
-          <p>Команда</p>
-          <p>Блог</p>
-          <p>Продукты</p>
-          <p>Контакты</p>
+        <div className="right">
+          <a href="#">Terms and conditions</a>
+          <a href="#">Privacy policy</a>
         </div>
-        <div className="comp-wrapper">
-          <p>Terms and conditions</p>
-          <p>Privacy policy</p>
-        </div>
-        <div className="icons-wrapper">
-          <FaFacebookF />
-          <FaInstagram />
-          <FaTwitter />
-        </div>
+      </div>
+      <div className="footer-social-media">
+        <span><FaFacebookF className="facebook" /></span>
+        <span><FaInstagram className="instagram" /></span>
+        <span><FaTwitter className="twitter" /></span>
       </div>
     </footer>
   );
