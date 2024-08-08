@@ -1,30 +1,62 @@
 import Heading from "../common/Heading";
 import "./style.scss";
-import firstImage from '../../assets/images/1.png';
-import secondImage from '../../assets/images/2.png';
-import thirdImage from '../../assets/images/3.png';
-
-
+import firstImage from "../../assets/images/1.png";
+import secondImage from "../../assets/images/2.png";
+import thirdImage from "../../assets/images/3.png";
 
 function Team() {
   return (
     <main className="team-page-wrapper">
-      <Heading size={1.2}>Наша команда</Heading>
-      <div className="paragraph-wrapper">
+      <div className="heading-wrapper">
+        <Heading size={1.2}>Наша команда</Heading>
+      </div>
+      <div className="text-wrapper">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          fugiat sint ratione sunt molestiae vel cumque libero tempora. Mollitia
-          perferendis officiis pariatur perspiciatis inventore eligendi ab
-          obcaecati aspernatur, ducimus nemo hic enim beatae sed accusantium
-          aperiam eum libero sint quibusdam ipsam atque at ex nisi. Aperiam
-          maxime, sint necessitatibus minima saepe ipsam eius iste corporis
-          distinctio, modi voluptate eligendi! Cupiditate?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam is
+          cupiditate tempora deserunt numquam aliquam aspernatur impedit? Cumque
+          laudantium quae, distinctio asperiores, beatae magnam quos repudiandae
+          reiciendis, quas nulla dolor deserunt.lorem laudantium quae,reiciendis,
+          distinctio asperiores, beatae magnam quos repudiandae reiciendis, quas
+          nulla dolor deserunt.lorem
         </p>
       </div>
-      <div className="img-wrapper">
-        <img src={firstImage} alt="firstImage" />
-        <img src={secondImage} alt="secondImage" />
+      <div className="image-wrapper">
+        <div className="img-container">
+          <img src={firstImage} />
+          <p>Эрджан Мусин</p>
+          <p>CFO</p>
+        </div>
+        <div className="img-container">
+          <img src={secondImage} />
+          <p>Олжас уkенов</p>
+          <p>CEO</p>
+        </div>
+        <div className="img-container">
+          <img src={thirdImage} />
+          <p>Эрджан Мусин</p>
+          <p>CFO</p>
+        </div>
+        <div className="img-container">
+          <img src={firstImage} />
+          <p>Олжас уkенов</p>
+          <p>CEO</p>
+        </div>
+        <div className="img-container">
+          <img src={secondImage} />
+          <p>Эрджан Мусин</p>
+          <p>CFO</p>
+        </div>
+        <div className="img-container">
+          <img src={thirdImage} />
+          <p>Олжас уkенов</p>
+          <p>CEO</p>
+        </div>
       </div>
+      <div className="heading-wrapper">
+        <Heading size={1.2}> Сторонники и Партнеры</Heading>
+      </div>
+      <h3>SeedBox</h3>
+      <h3>Freedom Finance</h3>
     </main>
   );
 }

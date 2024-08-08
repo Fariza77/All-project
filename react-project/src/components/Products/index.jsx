@@ -1,11 +1,14 @@
-import './style.scss'
+import Heading from "../common/Heading";
+import "./style.scss";
+import HedgeImage from "../../assets/images/img4.png";
 
 function Products() {
-    return (
-        <main className="products-page-wrapper">
-            <h1>Products Page</h1>
-        </main>
-    );
+  return (
+    <main className="products-page-wrapper">
+      <Heading size={1.2}>Products</Heading>
+  
+    </main>
+  );
 }
 
 export default Products;

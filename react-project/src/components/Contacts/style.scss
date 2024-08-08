@@ -1,3 +1,44 @@
-.contacts-page-wrapper {
-    padding: 50px 100px;
+@import '../../assets//styles/settings';
+
+body{
+    
+    .contacts-page-wrapper {
+        background-color: $dark-lighter;
+        padding: 50px 100px;
+        @include grid(2, 1fr 1fr);
+        .left {
+            @include flex();
+            flex-direction: column;
+            gap: 15px;
+            .bottom {
+                
+            }
+        
+        }
+        .rigth {
+            
+            form{
+                @include flex();
+                flex-direction: column;
+                gap: 12px;
+               input {
+                width: 350px;
+                background-color:$dark;
+                &:hover{
+                    border: 2px solid $warning;
+                }
+                &:active{
+                    border: 2px solid $warning;
+                    background-color: $warning-t;
+                }
+               }
+               button{
+                width: 350px;
+               }
+            }
+        }
+      
+    }
+    
+  
 }

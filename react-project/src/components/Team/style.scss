@@ -1,3 +1,28 @@
+@import '../../assets//styles/settings';
+
+
 .team-page-wrapper {
     padding: 50px 100px;
+    @include flex();
+    flex-direction: column;
+    gap: 30px;
+    .text-wrapper {
+        width: 60%;
+    }
+    .image-wrapper {
+        @include flex();
+        gap : 25px;
+        justify-content:start;
+        p{
+            text-align: center;
+            vertical-align:bottom;
+        }
+    }
+    h2{
+        display: inline-block;
+        transform: translate();
+        
+    }
 }
+
+

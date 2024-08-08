@@ -1,3 +1,17 @@
+@import "../../assets//styles/settings";
+
+
 .products-page-wrapper {
+    background-image: url(img4.png);
     padding: 50px 100px;
+    width: 80%;
+    height: 500px;
+}
+.xedj-wrapper {
+    @include flex(column, flex-start);
+    gap: 15px;
+
+    button{
+        padding: 10px 25px;
+    }
 }
