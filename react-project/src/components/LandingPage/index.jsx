@@ -1,5 +1,4 @@
 import "./style.scss"
-import Heading from "../common/Heading"
 import CarouselComponent from "../common/CarouselComponent"
 
 import CImage1 from "../../assets/images/img1.png"
@@ -8,13 +7,25 @@ import CImage3 from "../../assets/images/img3.png"
 import CImage4 from "../../assets/images/img4.png"
 import CImage5 from "../../assets/images/img5.png"
 
+import About from "../About"
+
+
 function LandingPage() {
   let images = [CImage1, CImage2, CImage3, CImage4, CImage5]
 
   return (
     <main className="landing-page-wrapper">
-      <Heading size={1.4}>О нас</Heading>
-      <CarouselComponent images={images} />
+      <div className="landing-carousel-wrapper">
+        <CarouselComponent images={images}>
+          <h1>Хедж-фонд</h1>
+          <p>Классический выбор профессиональных инвесторов с заданными умеренными параметрами риска. Основан на инвестировании в бумаги индекса S&P 500 с диверсификацией по 11 секторам экономики.</p>
+          <button className="warning-btn">
+            Подробнее
+          </button>
+        </CarouselComponent>
+      </div>
+
+      <About />
     </main>
   )
 }

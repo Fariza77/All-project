@@ -1,0 +1,41 @@
+@import "../../../assets/styles/settings";
+
+.carousel-wrapper {
+    position: relative;
+
+    img {
+        filter: grayscale(100%) brightness(50%) contrast(0.9);
+    }
+
+    ul.control-dots {
+        li.dot {
+            transform: scale(1.5);
+            background-color: lightgray;
+
+            &.selected {
+                background-color: $warning;
+                box-shadow: 3px 3px 15px 3px #FF660050, -3px -3px 15px 3px #FF660050;
+            }
+        }
+    }
+
+    .inner-carousel-info {
+        position: absolute;
+        z-index: 999;
+        max-width: 500px;
+        top: 160px;
+        left: 160px;
+        padding: 15px;
+        color: $light;
+
+        p {
+            color: $light;
+            margin: 50px 0;
+            line-height: 1.5em;
+        }
+
+        .warning-btn {
+            background-color: #FF660050;
+        }
+    }
+}

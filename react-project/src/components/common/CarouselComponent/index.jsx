@@ -6,12 +6,14 @@ import { Carousel } from 'react-responsive-carousel'
 function CarouselComponent(props) {
     return (
         <div className="carousel-wrapper">
-            <Carousel showThumbs={false}>
+            <div className="inner-carousel-info">
+                {props.children}
+            </div>
+            <Carousel showThumbs={false} showStatus={false} autoPlay={true} infiniteLoop={true}>
                 {props.images.map((image, index) => {
                     return (
                         <div key={index} className='slide'>
-                            <img src={image} width={"100%"} height={350} />
-                      
+                            <img src={image} width={"100%"} height={650} />
                         </div>
                     )
                 })}
