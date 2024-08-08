@@ -4,7 +4,8 @@ nav {
     @include grid(3, 5px);
     grid-template-columns: 1fr 4fr 1fr;
     justify-content: space-around;
-    padding: 50px 100px;
+    align-items: center;
+    padding: 20px 100px;
 
     .middle {
         text-align: center;

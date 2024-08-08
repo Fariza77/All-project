@@ -3,13 +3,15 @@ import "./style.scss";
 import firstImage from "../../assets/images/1.png";
 import secondImage from "../../assets/images/2.png";
 import thirdImage from "../../assets/images/3.png";
+import Member from "./Member";
 
 function Team() {
   return (
     <main className="team-page-wrapper">
-      <div className="heading-wrapper">
+      <div className="section">
         <Heading size={1.2}>Наша команда</Heading>
       </div>
+
       <div className="text-wrapper">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam is
@@ -20,43 +22,31 @@ function Team() {
           nulla dolor deserunt.lorem
         </p>
       </div>
-      <div className="image-wrapper">
-        <div className="img-container">
+      <div className="all-members-wrapper">
+        <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
+        <Member name="Олжас Укенов" title="CEO" image={secondImage} />
+        <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
+        <Member name="Олжас Укенов" title="CEO" image={secondImage} />
+        <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
+        <Member name="Олжас Укенов" title="CEO" image={secondImage} />
+        {/* <div className="img-container">
           <img src={firstImage} />
           <p>Эрджан Мусин</p>
           <p>CFO</p>
         </div>
         <div className="img-container">
           <img src={secondImage} />
-          <p>Олжас уkенов</p>
+          <p>Олжас Укенов</p>
           <p>CEO</p>
-        </div>
-        <div className="img-container">
-          <img src={thirdImage} />
-          <p>Эрджан Мусин</p>
-          <p>CFO</p>
-        </div>
-        <div className="img-container">
-          <img src={firstImage} />
-          <p>Олжас уkенов</p>
-          <p>CEO</p>
-        </div>
-        <div className="img-container">
-          <img src={secondImage} />
-          <p>Эрджан Мусин</p>
-          <p>CFO</p>
-        </div>
-        <div className="img-container">
-          <img src={thirdImage} />
-          <p>Олжас уkенов</p>
-          <p>CEO</p>
-        </div>
+        </div>*/}
       </div>
-      <div className="heading-wrapper">
+
+      <div className="section">
         <Heading size={1.2}> Сторонники и Партнеры</Heading>
+        <br />
+        <h2>SeedBox</h2>
+        <h2>Freedom Finance</h2>
       </div>
-      <h3>SeedBox</h3>
-      <h3>Freedom Finance</h3>
     </main>
   );
 }
