@@ -8,7 +8,7 @@ function Heading(props) {
                          : '40px';
 
     return (
-        <div className="heading-wrapper">
+        <div className={props.gray ? "heading-wrapper gray" : "heading-wrapper"}>
             <h1 style={{fontSize}}>
                 {props.children}
                 <img src={Vector} alt="Vector" />

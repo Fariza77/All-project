@@ -9,7 +9,7 @@ function Footer() {
     <div className="footer-wrapper">
       <footer className="main-footer">
         <div className="heading-wrapper">
-          <Heading size={1.2}>Fonte</Heading>
+          <Heading size={1.2} gray={true}>Fonte</Heading>
         </div>
         <div className="footer-links">
           <div className="left">
