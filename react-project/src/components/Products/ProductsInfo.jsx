@@ -1,9 +1,12 @@
-import React from 'react';
+import "./style.scss"
 
 export default function ProductsInfo(props) {
   return (
     <div className="products-info-wrapper">
-        <img src={props.image} />
+      <div className="inner-product-info">
+        {props.children}
+      </div>
+      <img src={props.image} />
     </div>
   )
 }

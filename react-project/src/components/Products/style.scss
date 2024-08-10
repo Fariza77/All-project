@@ -2,6 +2,8 @@
 
 .products-page-wrapper {
   padding: 50px 100px;
+  position: relative;
+
   .component-wrapper {
     img {
       width: 100%;
@@ -14,11 +16,22 @@
       }
     }
   }
+
+  .inner-product-info {
+    position: absolute;
+    z-index: 2;
+
+    // top: ...;
+    // left: ...;
+  }
+
+
   h2 {
     font-weight: normal;
     font-size: 30px;
     margin-top: 50px;
     color: gray;
+
     span {
       color: $warning;
       width: 100px;
