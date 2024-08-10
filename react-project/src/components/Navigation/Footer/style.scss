@@ -4,6 +4,7 @@ footer.main-footer {
     background-color: $dark-lighter;
     padding: 50px 100px;
     @include grid(3, 20px);
+    
 
     .footer-links {
         @include grid(2, 50px);
@@ -51,6 +52,22 @@ footer.main-footer {
                 color: cyan;
             }
         }
+    }
+   
+}
+.section {
+    padding: 50px 100px;
+  
+    h3{
+        margin-bottom: 50px;
+    }
+    p{
+        opacity: 50%;
+        size: 12px;
+        margin-bottom: 20px;
+        width: 70%;
+     
+        
     }
 }
 
