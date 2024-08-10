@@ -29,16 +29,7 @@ function Team() {
         <Member name="Олжас Укенов" title="CEO" image={secondImage} />
         <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
         <Member name="Олжас Укенов" title="CEO" image={secondImage} />
-        {/* <div className="img-container">
-          <img src={firstImage} />
-          <p>Эрджан Мусин</p>
-          <p>CFO</p>
-        </div>
-        <div className="img-container">
-          <img src={secondImage} />
-          <p>Олжас Укенов</p>
-          <p>CEO</p>
-        </div>*/}
+   
       </div>
 
       <div className="section">
