@@ -5,19 +5,9 @@ import { FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./style.scss";
 
-import { useEffect } from "react";
 
 function Footer() {
-  function goToTopSmoothly() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-
-  useEffect(() => {
-    goToTopSmoothly()
-  }, [])
+  
 
   return (
     <div className="footer-wrapper">

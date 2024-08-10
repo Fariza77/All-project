@@ -35,7 +35,7 @@ function LandingPage() {
       <div className="hr-wrapper">
         <Marquee />
       </div>
-
+      
       <div className="lending-page-values-wrapper">
         <OurValues />
       </div>

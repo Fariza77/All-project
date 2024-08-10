@@ -3,8 +3,20 @@ import "./style.scss";
 import firstImage from "../../assets/images/1.png";
 import secondImage from "../../assets/images/2.png";
 import Member from "./Member";
+import { useEffect } from "react";
 
 function Team(props) {
+  function goToTopSmoothly() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    goToTopSmoothly()
+  }, [])
+
   return (
     <main className="team-page-wrapper">
       <div className="section">
@@ -23,7 +35,6 @@ function Team(props) {
       </div>
 
 
-
       <div className={props.grayscale ? "all-members-wrapper grayscale" : "all-members-wrapper"}>
         <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
         <Member name="Олжас Укенов" title="CEO" image={secondImage} />
@@ -31,7 +42,7 @@ function Team(props) {
         <Member name="Олжас Укенов" title="CEO" image={secondImage} />
         <Member name="Эрджан Мусин" title="CFO" image={firstImage} />
         <Member name="Олжас Укенов" title="CEO" image={secondImage} />
-   
+
       </div>
 
       <div className="section">
