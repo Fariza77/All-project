@@ -7,8 +7,6 @@ import "./style.scss";
 
 
 function Footer() {
-  
-
   return (
     <div className="footer-wrapper">
       <footer className="main-footer">

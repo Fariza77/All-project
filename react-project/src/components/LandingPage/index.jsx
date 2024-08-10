@@ -11,6 +11,7 @@ import About from "../About"
 import OurValues from "./OurValues"
 import Marquee from "../common/Marquee"
 import Team from '../Team'
+import Consultation from "../Navigation/Footer/Consultation"
 
 
 function LandingPage() {
@@ -35,7 +36,7 @@ function LandingPage() {
       <div className="hr-wrapper">
         <Marquee />
       </div>
-      
+
       <div className="lending-page-values-wrapper">
         <OurValues />
       </div>
@@ -48,6 +49,9 @@ function LandingPage() {
         <Team grayscale={true} />
       </div>
 
+      <div className="lending-page-consultation-wrapper">
+        <Consultation />
+      </div>
     </main>
   )
 }
