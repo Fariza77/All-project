@@ -10,6 +10,7 @@ import CImage5 from "../../assets/images/img5.png"
 import About from "../About"
 import OurValues from "./OurValues"
 import Marquee from "../common/Marquee"
+import Team from '../Team'
 
 
 function LandingPage() {
@@ -27,17 +28,24 @@ function LandingPage() {
         </CarouselComponent>
       </div>
 
-
-      <About />
+      <div className="lending-page-about-wrapper">
+        <About />
+      </div>
 
       <div className="hr-wrapper">
         <Marquee />
       </div>
 
-      <OurValues />
+      <div className="lending-page-values-wrapper">
+        <OurValues />
+      </div>
 
       <div className="hr-wrapper">
         <Marquee reversed={true} />
+      </div>
+
+      <div className="lending-page-team-wrapper">
+        <Team grayscale={true} />
       </div>
 
     </main>

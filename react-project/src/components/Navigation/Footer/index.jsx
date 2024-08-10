@@ -1,10 +1,24 @@
 import Heading from "../../common/Heading";
-import "./style.scss";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./style.scss";
+
+import { useEffect } from "react";
 
 function Footer() {
+  function goToTopSmoothly() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  useEffect(() => {
+    goToTopSmoothly()
+  }, [])
+
   return (
     <div className="footer-wrapper">
       <footer className="main-footer">
@@ -14,7 +28,7 @@ function Footer() {
         <div className="footer-links">
           <div className="left">
             <a href="#">О нас</a>
-            <a href="#">Команда</a>
+            <Link to="team/">Команда</Link>
             <a href="#">Блог</a>
             <a href="#">Продукты</a>
             <a href="#">Контакты</a>
