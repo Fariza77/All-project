@@ -22,10 +22,6 @@ function About() {
           </button>
         </div>
       </div>
-
-      <div className="hr-wrapper">
-        <Marquee />
-      </div>
     </main>
   );
 }

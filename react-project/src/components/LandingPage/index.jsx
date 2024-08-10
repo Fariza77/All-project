@@ -8,6 +8,8 @@ import CImage4 from "../../assets/images/img4.png"
 import CImage5 from "../../assets/images/img5.png"
 
 import About from "../About"
+import OurValues from "./OurValues"
+import Marquee from "../common/Marquee"
 
 
 function LandingPage() {
@@ -25,7 +27,19 @@ function LandingPage() {
         </CarouselComponent>
       </div>
 
+
       <About />
+
+      <div className="hr-wrapper">
+        <Marquee />
+      </div>
+
+      <OurValues />
+
+      <div className="hr-wrapper">
+        <Marquee reversed={true} />
+      </div>
+
     </main>
   )
 }
