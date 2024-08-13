@@ -20,11 +20,29 @@
   .inner-product-info {
     position: absolute;
     z-index: 2;
-
-    // top: ...;
-    // left: ...;
+    margin-top: 40px;
+    margin-left: 50px;
+    h2 {
+      color: $light;
+      margin-bottom: 20px;
+      span {
+        color: $warning;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      line-height: 1.2em;
+      width: 50%;
+      color: gray;
+    }
+    button {
+      padding: 10px 50px;
+      box-shadow: 0 0 0 0;
+      background-color: $warning;
+      font-size: 1.1em;
+    }
   }
-
 
   h2 {
     font-weight: normal;
