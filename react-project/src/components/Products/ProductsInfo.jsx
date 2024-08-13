@@ -6,7 +6,9 @@ export default function ProductsInfo(props) {
       <div className="inner-product-info">
         {props.children}
       </div>
-      <img src={props.image} />
+      <div className='image-wrapper'>
+        <img src={props.image} />
+      </div>
     </div>
   )
 }

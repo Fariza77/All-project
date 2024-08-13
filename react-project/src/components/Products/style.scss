@@ -4,43 +4,78 @@
   padding: 50px 100px;
   position: relative;
 
-  .component-wrapper {
-    img {
-      width: 100%;
-      height: 350px;
-      margin-top: 50px;
-      filter: grayscale(100%) brightness(80%) contrast(0.8);
+  .products-info-wrapper {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background-color: #272628;
+    margin: 50px 0;
 
-      &:hover {
-        filter: grayscale(0);
+    .inner-product-info {
+      position: absolute;
+      z-index: 2;
+      top: 10px;
+      left: 50px;
+
+      h2 {
+        color: $light;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+
+        span {
+          color: $warning;
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        line-height: 1.2em;
+        width: 70%;
+        color: $light;
+      }
+
+      button {
+        padding: 10px 50px;
+        box-shadow: 0 0 0 0;
+        background-color: $warning-t;
+        font-size: 1.1em;
+
+        &:hover {
+          background-color: $warning;
+        }
       }
     }
-  }
 
-  .inner-product-info {
-    position: absolute;
-    z-index: 2;
-    margin-top: 40px;
-    margin-left: 50px;
-    h2 {
-      color: $light;
-      margin-bottom: 20px;
-      span {
-        color: $warning;
-      }
-    }
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1em;
-      line-height: 1.2em;
+    .image-wrapper {
       width: 50%;
-      color: gray;
+      float: right;
+
+      mask-image: linear-gradient(to right, #43414800, #43414880, #434148);
+      mask-position: center;
+      mask-size: cover;
+      mask-repeat: no-repeat;
+
+      -webkit-mask-image: linear-gradient(to right, #43414800, #43414880, #434148);
+      -webkit-mask-position: center;
+      -webkit-mask-size: cover;
+      -webkit-mask-repeat: no-repeat;
+
+      img {
+        width: 100%;
+        height: 350px;
+        filter: grayscale(100%) brightness(80%) contrast(0.8);
+      }
     }
-    button {
-      padding: 10px 50px;
-      box-shadow: 0 0 0 0;
-      background-color: $warning;
-      font-size: 1.1em;
+
+    &:hover {
+      background-color: #434148;
+
+      .image-wrapper {
+        img {
+          filter: grayscale(0);
+        }
+      }
     }
   }
 
