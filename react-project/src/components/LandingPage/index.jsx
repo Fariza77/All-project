@@ -12,6 +12,7 @@ import OurValues from "./OurValues"
 import Marquee from "../common/Marquee"
 import Team from '../Team'
 import Consultation from "../Navigation/Footer/Consultation"
+import CompanyBlog from "./CompanyBlog"
 
 
 function LandingPage() {
@@ -20,7 +21,7 @@ function LandingPage() {
   return (
     <main className="landing-page-wrapper">
       <div className="landing-carousel-wrapper">
-        <CarouselComponent images={images}>
+        <CarouselComponent images={images} blurred={true}>
           <h1>Хедж-фонд</h1>
           <p>Классический выбор профессиональных инвесторов с заданными умеренными параметрами риска. Основан на инвестировании в бумаги индекса S&P 500 с диверсификацией по 11 секторам экономики.</p>
           <button className="warning-btn">
@@ -49,9 +50,18 @@ function LandingPage() {
         <Team grayscale={true} />
       </div>
 
+      <div className="hr-wrapper">
+        <Marquee />
+      </div>
+
+      <div className="company-blog-wrapper">
+        <CompanyBlog />
+      </div>
+
       <div className="lending-page-consultation-wrapper">
         <Consultation />
       </div>
+
     </main>
   )
 }
