@@ -4,6 +4,9 @@ import { Carousel } from 'react-responsive-carousel';
 import BlogSlideItem from "./BlogSlideItem.jsx"
 
 function CarouselComponent(props) {
+    // props.blurred:   ->  makes images blurred (filtered)
+    // props.indicatorsAsNumbers:  ->  if true, indicators will be shown as numbers
+
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(50%) contrast(0.9)" : "none"
     }
@@ -32,9 +35,7 @@ function CarouselComponent(props) {
         } else {
             return (
                 <span
-                    className={
-                        isSelected ? "indicator selected" : "indicator"
-                    }
+                    className={isSelected ? "indicator selected" : "indicator"}
                     onClick={onClickHandler}
                     onKeyDown={onClickHandler}
                     value={index}
