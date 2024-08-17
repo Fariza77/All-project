@@ -60,7 +60,7 @@ function Products() {
         </ProductsInfo>
       </div>
       <h2>
-        <span>*</span> в процессе регистрации{" "}
+        <span>*</span> в процессе регистрации
       </h2>
     </main>
   );
