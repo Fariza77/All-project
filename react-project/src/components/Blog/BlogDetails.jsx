@@ -36,6 +36,11 @@ export default function BlogDetails(props) {
 
       <h1 className='title'>{blogObject.title}</h1>
 
+      <p className='author-info'>
+        <span className='author'>{blogObject.author}</span>,
+        <span className='date'>{blogObject.date}</span>
+      </p>
+
       <img src={image} width={"100%"} height={400} />
 
       <p className='subtitle-1'>{blogObject.subtitle1}</p>
