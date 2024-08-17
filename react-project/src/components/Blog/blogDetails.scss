@@ -1,0 +1,52 @@
+@import "../../assets/styles/settings";
+
+.blog-details-wrapper {
+    padding: 50px 350px;
+
+    * {
+        margin-bottom: 20px;
+    }
+
+    .intro {
+        color: $light;
+    }
+
+    .title {
+        margin: 20px 0 10px 0;
+    }
+
+    .img {
+        // ...
+    }
+
+    .subtitle-1,
+    .subtitle-2 {
+        color: lightgray;
+        line-height: 1.2em;
+    }
+
+    .other {
+        margin: 100px 0 50px 0;
+
+        .row {
+            margin-top: 50px;
+            @include grid(2);
+            position: relative;
+
+            a {
+                padding: 0;
+                display: inline-block;
+                font-size: 14px;
+                padding-bottom: 5px;
+                color: $warning;
+                border-bottom: 1px solid transparent;
+                position: absolute;
+
+                &:hover {
+                    padding-bottom: 10px;
+                    border-color: $warning;
+                }
+            }
+        }
+    }
+}

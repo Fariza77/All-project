@@ -1,22 +1,12 @@
-import './style.scss';
-import blogs from '../../db/blog.json';
-import { useState } from 'react';
-import BlogInfo from './BlogInfo';
+import './style.scss'
+import Heading from '../common/Heading'
 
-
-function Blog() {
-    const [information, setInformation] = useState("")
-    function getInfo() {
-        for(let item of blogs){
-            
-           
-        }
-    }
+function Blog(props) {
     return (
         <main className="blog-page-wrapper">
-          <BlogInfo />
+            <Heading size={1.2}>Blog</Heading>
         </main>
-    );
+    )
 }
 
-export default Blog;
+export default Blog

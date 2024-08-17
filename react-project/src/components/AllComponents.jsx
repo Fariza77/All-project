@@ -7,6 +7,7 @@ import Team from './Team'
 import Blog from './Blog'
 import Products from './Products'
 import Contacts from './Contacts'
+import BlogDetails from "./Blog/BlogDetails";
 
 function AllComponents() {
     const location = useLocation();
@@ -17,7 +18,8 @@ function AllComponents() {
                 <Route index element={<LandingPage />} />
                 <Route path="about" element={<About />} />
                 <Route path="team" element={<Team />} />
-                <Route path="blog/:id" element={<Blog />} />
+                <Route path="blog" element={<Blog />} />
+                <Route path="blog/:id" element={<BlogDetails />} />
                 <Route path="products" element={<Products />} />
                 <Route path="contacts" element={<Contacts />} />
                 <Route path="*" element={<NoPage />} />
