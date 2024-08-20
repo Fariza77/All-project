@@ -6,6 +6,7 @@ import About from './About'
 import Team from './Team'
 import Blog from './Blog'
 import Products from './Products'
+import ProductDetails from './Products/ProductDetails.jsx'
 import Contacts from './Contacts'
 import BlogDetails from "./Blog/BlogDetails";
 
@@ -21,6 +22,7 @@ function AllComponents() {
                 <Route path="blog" element={<Blog />} />
                 <Route path="blog/:id" element={<BlogDetails />} />
                 <Route path="products" element={<Products />} />
+                <Route path="products/:id" element={<ProductDetails />} />
                 <Route path="contacts" element={<Contacts />} />
                 <Route path="*" element={<NoPage />} />
             </Route>

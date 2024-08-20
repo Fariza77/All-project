@@ -27,11 +27,12 @@ $small-screen: 680px;
 // @include grid();
 // @include grid(3, 10px);
 
-@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 10px) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+    gap: $gap;
 }
 
 // USAGE:

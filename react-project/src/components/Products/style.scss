@@ -35,14 +35,19 @@
         color: $light;
       }
 
-      button {
-        padding: 10px 50px;
-        box-shadow: 0 0 0 0;
-        background-color: $warning-t;
-        font-size: 1.1em;
+      a {
+        padding: 0;
+        margin-top: 20px;
 
-        &:hover {
-          background-color: $warning;
+        button {
+          padding: 10px 50px;
+          box-shadow: 0 0 0 0;
+          background-color: $warning-t;
+          font-size: 1.1em;
+
+          &:hover {
+            background-color: $warning;
+          }
         }
       }
     }

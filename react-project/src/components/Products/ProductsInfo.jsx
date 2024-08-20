@@ -1,5 +1,6 @@
 import "./style.scss"
 
+
 export default function ProductsInfo(props) {
   return (
     <div className="products-info-wrapper">
