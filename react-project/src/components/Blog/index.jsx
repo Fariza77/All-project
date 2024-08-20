@@ -1,25 +1,24 @@
 import './style.scss'
-import Heading from '../common/Heading';
-import blogJson from '../../db/blog.json';
-import { useParams } from 'react-router-dom';
-import Item from './Item';
+import Heading from '../common/Heading'
+import blogJson from '../../db/blog.json'
+import Item from './Item.jsx';
 
 function Blog(props) {
-    const { id } = useParams();
-
     return (
-        <main className="blog-page-wrapper">
-            <Heading size={1.2}>Blog</Heading>
+        <div className="blog-page-wrapper">
+            <Heading size={1}>Blog</Heading>
+
 
             {
-                blogJson?.map((item, index) => {
-                    <div key={index} className="item">
-                        <Item item={item}/>
-                     </div>
+                blogJson.map((item, index) => {
+                    return (
+                        <div key={index} className="item-wrapper">
+                            <Item item={item} />
+                        </div>
+                    )
                 })
             }
-            <Item />
-        </main>
+        </div>
     )
 }
 
