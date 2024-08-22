@@ -49,3 +49,47 @@
         }
     }
 }
+
+
+@media (max-width: $xx-large-screen) {
+    .landing-page-wrapper {
+        .values-section-wrapper {
+            padding: 50px 100px;
+        }
+    }
+}
+
+@media (max-width: $x-large-screen) {}
+
+@media (max-width: $large-screen) {
+    .landing-page-wrapper {
+        .values-section-wrapper {
+            padding: 50px 20px;
+
+            .content {
+                gap: 100px 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: $medium-screen) {
+    .landing-page-wrapper {
+        .values-section-wrapper {
+            padding: 50px 20px;
+
+            .content {
+                gap: 50px 20px;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media (max-width: $small-screen) {
+    .landing-page-wrapper {
+        .values-section-wrapper {
+            padding: 50px 0;
+        }
+    }
+}
