@@ -53,9 +53,12 @@ function CarouselComponent(props) {
 
     return (
         <section className="carousel-section">
-            <div className="inner-carousel-info">
-                {props.children}
-            </div>
+            {
+                !props.indicatorsAsNumbers &&
+                <div className="inner-carousel-info">
+                    {props.children}
+                </div>
+            }
             <Carousel
                 showThumbs={false}
                 autoPlay={true}

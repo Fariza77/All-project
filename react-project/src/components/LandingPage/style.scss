@@ -56,16 +56,25 @@
         .values-section-wrapper {
             padding: 50px 100px;
         }
-    }
 
-    .landing-page-wrapper {
         .lending-page-team-wrapper {
             padding: 0 50px;
+        }
+
+        .company-blog-wrapper {
+            padding: 50px 100px;
         }
     }
 }
 
-@media (max-width: $x-large-screen) {}
+@media (max-width: $x-large-screen) {
+    .landing-page-wrapper {
+        .company-blog-wrapper {
+            padding: 50px;
+        }
+    }
+}
+
 
 @media (max-width: $large-screen) {
     .landing-page-wrapper {
@@ -89,11 +98,13 @@
                 grid-template-columns: 1fr;
             }
         }
-    }
 
-    .landing-page-wrapper {
         .lending-page-team-wrapper {
             padding: 0 10px;
+        }
+
+        .company-blog-wrapper {
+            padding: 20px;
         }
     }
 }
