@@ -92,11 +92,11 @@ function ProductDetails(props) {
 
                     <div className="content">
                         <div className="first">
-                            <img src={Certificate} />
+                            <img src={Certificate} onClick={(e) => e.target.requestFullscreen()} />
                             <p>Сертификат</p>
                         </div>
                         <div className="second">
-                            <img src={Lycence} />
+                            <img src={Lycence} onClick={(e) => e.target.requestFullscreen()} />
                             <p>Лицензия</p>
                         </div>
                     </div>
