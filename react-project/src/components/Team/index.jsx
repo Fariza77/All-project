@@ -19,9 +19,7 @@ function Team(props) {
 
   return (
     <main className="team-page-wrapper">
-      <div className="section">
-        <Heading size={1.2}>Наша команда</Heading>
-      </div>
+      <Heading size={1.2}>Наша команда</Heading>
 
       <div className="text-wrapper">
         <p>

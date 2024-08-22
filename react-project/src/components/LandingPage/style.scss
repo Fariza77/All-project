@@ -57,6 +57,12 @@
             padding: 50px 100px;
         }
     }
+
+    .landing-page-wrapper {
+        .lending-page-team-wrapper {
+            padding: 0 50px;
+        }
+    }
 }
 
 @media (max-width: $x-large-screen) {}
@@ -82,6 +88,12 @@
                 gap: 50px 20px;
                 grid-template-columns: 1fr;
             }
+        }
+    }
+
+    .landing-page-wrapper {
+        .lending-page-team-wrapper {
+            padding: 0 10px;
         }
     }
 }

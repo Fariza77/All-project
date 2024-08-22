@@ -2,6 +2,10 @@
 
 
 .team-page-wrapper {
+    .heading-wrapper {
+        padding: 0 100px;
+    }
+
     .text-wrapper {
         max-width: 940px;
         padding: 50px 100px;
@@ -42,3 +46,41 @@
         }
     }
 }
+
+
+
+@media (max-width: $xx-large-screen) {}
+
+@media (max-width: $x-large-screen) {}
+
+@media (max-width: $large-screen) {
+    .team-page-wrapper {
+        .heading-wrapper {
+            padding: 0 50px;
+        }
+
+        .text-wrapper {
+            max-width: 1100px;
+            width: 100%;
+            padding: 50px;
+        }
+    }
+
+}
+
+@media (max-width: $medium-screen) {
+    .team-page-wrapper {
+        .section {
+            .heading-wrapper {
+                padding: 0;
+            }
+
+            h2 {
+                margin-right: 20px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: $small-screen) {}
