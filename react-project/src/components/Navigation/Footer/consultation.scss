@@ -49,3 +49,228 @@
         }
     }
 }
+
+
+@media (max-width: $xx-large-screen) {
+    .consultation-wrapper {
+        padding: 0 150px;
+        form {
+            margin: 40px 80px ;
+           
+            .form-control {
+                input {
+
+                }
+
+            }
+            &.row {
+                .left {
+                    input {
+
+                    }
+                }
+                .right {
+                    input {
+
+                    }
+                }
+            }
+            .form-control {
+                textarea {
+
+                }
+            }
+            .form-control {
+                button {
+
+                }
+            }
+        }
+        .image-wrapper {
+            img {
+
+            }
+        }
+
+    }
+
+}
+@media (max-width: $x-large-screen) {
+    .consultation-wrapper {
+        padding: 0 100px;
+        form {
+            margin: 25px 60px ;
+            .form-control {
+                input {
+
+                }
+                &.row {
+                    
+                    .left {
+                        input {
+    
+                        }
+                    }
+                    .right {
+                        input {
+    
+                        }
+                    }
+                }
+            }
+           
+            .form-control {
+                textarea {
+
+                }
+            }
+            .form-control {
+                button {
+
+                }
+            }
+        }
+        .image-wrapper {
+            img {
+
+            }
+        }
+
+    }
+}
+@media (max-width: $large-screen) {
+    .consultation-wrapper {
+        padding: 0 50px;
+        form {
+            margin: 15px 30px ;
+            .form-control {
+                input {
+
+                }
+                &.row {
+                    
+                    .left {
+                        input {
+    
+                        }
+                    }
+                    .right {
+                        input {
+    
+                        }
+                    }
+                }
+            }
+            
+            .form-control {
+                textarea {
+
+                }
+            }
+            .form-control {
+                button {
+
+                }
+            }
+        }
+        .image-wrapper {
+            img {
+
+            }
+        }
+
+    }
+
+}
+@media (max-width: $medium-screen) {
+    .consultation-wrapper {
+        padding: 0 30px;
+        form {
+            margin: 10px 20px ;
+            .form-control {
+                input {
+
+                }
+                &.row {
+                    
+                    .left {
+                        input {
+    
+                        }
+                    }
+                    .right {
+                        input {
+    
+                        }
+                    }
+                }
+            }
+            
+            .form-control {
+                textarea {
+
+                }
+            }
+            .form-control {
+                button {
+
+                }
+            }
+        }
+        .image-wrapper {
+            img {
+
+            }
+        }
+
+    }
+
+
+}
+@media (max-width: $small-screen) {
+    .consultation-wrapper {
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+        form {
+            margin: 10px 15px ;
+            .form-control {
+                input {
+
+                }
+                &.row{
+                    display: flex;
+                    flex-direction: column;
+                    .left {
+                        input {
+    
+                        }
+                    }
+                    .right {
+                        input {
+    
+                        }
+                    }
+                }
+            }
+           
+            .form-control {
+                textarea {
+
+                }
+            }
+            .form-control {
+                button {
+
+                }
+            }
+        }
+        .image-wrapper {
+            img {
+
+            }
+        }
+
+    }
+
+
+}
