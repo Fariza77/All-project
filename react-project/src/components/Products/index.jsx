@@ -20,7 +20,7 @@ function Products() {
           ProductsJSON?.map((product, index) => {
             return (
               <>
-                <ProductsInfo image={images[product.id % images.length]}>
+                <ProductsInfo image={images[product.id % images.length]}key={product.id}>
                   <h2>{product.title}</h2>
                   <p>{product.content}</p>
                   <Link to={"/products/" + product.id} className="products-info">

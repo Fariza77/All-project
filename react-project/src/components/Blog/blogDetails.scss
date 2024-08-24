@@ -25,7 +25,7 @@
     }
 
     .img {
-        // ...
+        
     }
 
     .subtitle-1,
@@ -58,4 +58,254 @@
             }
         }
     }
+}
+
+@media (max-width: $xx-large-screen) {
+    .blog-details-wrapper {
+        padding: 50px 250px;
+        p.intro {
+            h1.title {
+                p.author-info {
+                    span.author {
+
+                    }
+                    span.date {
+
+                    }
+                }
+                img {
+
+                }
+                p.subtitle-1 {
+                    
+                }
+                p.subtitle-2 {
+
+                }
+                .other {
+                    h2 {
+
+                    }
+                    .row {
+
+                    }
+                    .col {
+                        h2 {
+
+                        } a {
+
+                        }
+                    }
+                    .col {
+                        h2 {
+
+                        }
+                        a {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $x-large-screen) {
+    .blog-details-wrapper {
+        padding: 50px 150px;
+        p.intro {
+            h1.title {
+                p.author-info {
+                    span.author {
+
+                    }
+                    span.date {
+
+                    }
+                }
+                img {
+
+                }
+                p.subtitle-1 {
+                    
+                }
+                p.subtitle-2 {
+
+                }
+                .other {
+                   
+                    h2 {
+
+                    }
+                    .row {
+                       
+                    }
+                    .col {
+                        h2 {
+
+                        } a {
+
+                        }
+                    }
+                    .col {
+                        h2 {
+
+                        }
+                        a {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $large-screen) {
+    .blog-details-wrapper {
+        padding: 50px 100px;
+        p.intro {
+            h1.title {
+                p.author-info {
+                    span.author {
+
+                    }
+                    span.date {
+
+                    }
+                }
+                img {
+
+                }
+                p.subtitle-1 {
+                    
+                }
+                p.subtitle-2 {
+
+                }
+                .other {
+                    h2 {
+
+                    }
+                    .row {
+
+                    }
+                    .col {
+                        h2 {
+
+                        } a {
+
+                        }
+                    }
+                    .col {
+                        h2 {
+
+                        }
+                        a {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media (max-width: $medium-screen) {
+    .blog-details-wrapper {
+        padding: 50px 50px;
+        p.intro {
+            h1.title {
+                p.author-info {
+                    span.author {
+
+                    }
+                    span.date {
+
+                    }
+                }
+                img {
+
+                }
+                p.subtitle-1 {
+                    
+                }
+                p.subtitle-2 {
+
+                }
+                .other {
+                    h2 {
+
+                    }
+                    .row {
+
+                    }
+                    .col {
+                        h2 {
+
+                        } a {
+
+                        }
+                    }
+                    .col {
+                        h2 {
+
+                        }
+                        a {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media (max-width: $small-screen) {
+    .blog-details-wrapper {
+        padding: 50px 20px;
+        .intro {
+            .title {
+               
+                .author-info {
+                    
+                    span.author {
+                        
+                    }
+                    span.date {
+
+                    }
+                }
+                img {
+
+                }
+                .subtitle-1,
+                .subtitle-2 {
+
+                }
+                .other {
+                    
+                    .row {
+                //   display: flex;
+                //   flex-direction: column;
+                grid-template-columns: 1fr;
+                    }
+                    .col {
+                        h2 {
+
+                        } a {
+
+                        }
+                    }
+                    .col {
+                        h2 {
+
+                        }
+                        a {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

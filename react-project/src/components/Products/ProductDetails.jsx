@@ -14,6 +14,7 @@ import { IoDocumentTextOutline } from "react-icons/io5"
 import { MdDownloadForOffline } from "react-icons/md"
 import Certificate from "../../assets/images/certificates/first.png"
 import Lycence from "../../assets/images/certificates/second.png"
+import Consultation from "../Navigation/Footer/Consultation"
 
 function ProductDetails(props) {
     const { id } = useParams()
@@ -45,10 +46,10 @@ function ProductDetails(props) {
                     {product.content}
                 </p>
             </div>
-            <p className="content content2">
+            <p className="content-content2">
                 {product.content2}
             </p>
-            <p className="content content3">
+            <p className="content-content3">
                 {product.content3}
             </p>
 
@@ -102,6 +103,7 @@ function ProductDetails(props) {
                     </div>
                 </div>
             </div>
+            <Consultation/>
         </div>
     );
 }
