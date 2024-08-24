@@ -1,44 +1,51 @@
 @import '../../assets//styles/settings';
 
-body{
-    
-    .contacts-page-wrapper {
-        background-color: $dark-lighter;
-        padding: 50px 100px;
-        @include grid(2, 1fr 1fr);
-        .left {
+.contacts-page-wrapper {
+    background-color: $dark-lighter;
+    padding: 50px 100px;
+    @include grid(2, 10px);
+    grid-template-columns: 2fr 1fr;
+
+    .left {
+        @include flex();
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .rigth {
+        form {
             @include flex();
             flex-direction: column;
-            gap: 15px;
-            .bottom {
-                
-            }
-        
-        }
-        .rigth {
-            
-            form{
-                @include flex();
-                flex-direction: column;
-                gap: 12px;
-               input {
+            gap: 12px;
+
+            input {
                 width: 350px;
-                background-color:$dark;
-                &:hover{
-                    border: 2px solid $warning;
+                background-color: $dark;
+                border: 2px solid transparent;
+
+                &:hover {
+                    border-color: $warning;
                 }
-                &:active{
-                    border: 2px solid $warning;
+
+                &:focus {
+                    border-color: $warning;
                     background-color: $warning-t;
+                    box-shadow: 0 0 5px $warning;
+
+                    &::placeholder {
+                        color: $light;
+                    }
                 }
-               }
-               button{
+
+                &:invalid {
+                    background-color: $danger;
+                }
+            }
+
+            button {
                 width: 350px;
-               }
             }
         }
-      
     }
-    
-  
+
 }
