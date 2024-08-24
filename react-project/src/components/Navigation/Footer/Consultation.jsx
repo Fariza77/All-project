@@ -19,7 +19,7 @@ function Consultation(props) {
                 <div className="form-control">
                     <input id='consultation-person-fullname' type="text" name="fullname" placeholder='Full name' />
                 </div>
-                <div className="form-control-row">
+                <div className="form-control row">
                     <div className="left">
                         <input id='consultation-person-email' type="email" name="email" placeholder='Email' />
                     </div>

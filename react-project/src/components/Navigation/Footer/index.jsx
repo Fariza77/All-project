@@ -10,20 +10,22 @@ function Footer() {
   return (
     <div className="footer-wrapper">
       <footer className="main-footer">
-        <div className="heading-wrapper">
-          <Heading size={1.2} gray={true}>Fonte</Heading>
-        </div>
-        <div className="footer-links">
-          <div className="left">
-            <a href="#">О нас</a>
-            <Link to="team/">Команда</Link>
-            <a href="#">Блог</a>
-            <a href="#">Продукты</a>
-            <a href="#">Контакты</a>
+        <div className="left-side">
+          <div className="heading-wrapper">
+            <Heading size={1.2} gray={true}>Fonte</Heading>
           </div>
-          <div className="right">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy policy</a>
+          <div className="footer-links">
+            <div className="left">
+              <a href="#">О нас</a>
+              <Link to="team/">Команда</Link>
+              <a href="#">Блог</a>
+              <a href="#">Продукты</a>
+              <a href="#">Контакты</a>
+            </div>
+            <div className="right">
+              <a href="#">Terms and conditions</a>
+              <a href="#">Privacy policy</a>
+            </div>
           </div>
         </div>
         <div className="footer-social-media">
