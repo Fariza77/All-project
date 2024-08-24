@@ -20,7 +20,7 @@ function Navigation() {
                     type="checkbox"
                     onClick={(e) => { setBurgerMenuOpened(e.target.checked) }}
                 />
-                {/* ...:checked + .nav-wrapper > .menu */}
+                {/* input:checked + .nav-wrapper > .menu */}
                 <Navbar />
             </header>
 
