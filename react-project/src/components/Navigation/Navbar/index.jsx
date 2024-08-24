@@ -4,26 +4,32 @@ import "./style.scss"
 
 function Navbar() {
     return (
-        <nav>
-            <div className="left">
-                <Link to="/">
-                    <Heading size={1}>Fonte</Heading>
-                </Link>
+        <div className="nav-wrapper">
+            <div className="logo">
+                <h2>
+                    <Link to={"/"}>
+                        <Heading size={1.5}>Fonte</Heading>
+                    </Link>
+                </h2>
             </div>
-            <div className="middle">
-                <Link to="about">О нас</Link>
-                <Link to="team">Команда</Link>
-                <Link to="blog">Блог</Link>
-                <Link to="products">Продукты</Link>
-                <Link to="contacts">Контакты</Link>
+
+            <div className="menu">
+                <div className="nav-links">
+                    <Link to="about">О нас</Link>
+                    <Link to="team">Команда</Link>
+                    <Link to="blog">Блог</Link>
+                    <Link to="products">Продукты</Link>
+                    <Link to="contacts">Контакты</Link>
+                </div>
+
+                <div className="auth">
+                    <button className="warning-btn">Войти</button>
+                    <a href="#">
+                        <u>Рус</u>
+                    </a>
+                </div>
             </div>
-            <div className="right">
-                <button className="warning-btn">Войти</button>
-                <a href="#">
-                    <u>Рус</u>
-                </a>
-            </div>
-        </nav>
+        </div>
     );
 }
 
