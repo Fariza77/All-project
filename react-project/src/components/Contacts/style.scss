@@ -103,4 +103,17 @@
             }
         }
     }
+
+    .maps {
+        margin-top: 100px;
+        @include flex($gap: 20px);
+
+        .heading-wrapper {
+            margin: 20px 0;
+        }
+
+        @media (max-width: $small-screen) {
+            flex-direction: column;
+        }
+    }
 }

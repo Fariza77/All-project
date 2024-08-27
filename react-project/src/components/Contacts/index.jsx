@@ -1,12 +1,9 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import mapImage from '../../assets/images/contact/map.png'
-import secondMap from '../../assets/images/contact/map1.png'
 import { useState } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-
-
+import MapComponent from "../common/MapComponent"
 
 // RULE
 // 1. Import any hook from 'react'
@@ -38,6 +35,7 @@ function Contacts() {
 
     function submit(e) { }
 
+    const office_coordinates = [41.2995958, 69.2400934]
 
     return (
         <main className="contacts-page-wrapper">
@@ -100,11 +98,13 @@ function Contacts() {
 
 
             <div className="maps">
-                <div>
-                    <img src={secondMap} />
+                <div className="item">
+                    <Heading size={2}>Офис в Самарканде</Heading>
+                    <MapComponent coords={office_coordinates} />
                 </div>
-                <div>
-                    <img src={mapImage} />
+                <div className="item">
+                    <Heading size={2}>Ваша местоположение</Heading>
+                    <MapComponent />
                 </div>
             </div>
         </main>
