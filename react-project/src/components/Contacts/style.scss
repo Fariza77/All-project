@@ -3,49 +3,104 @@
 .contacts-page-wrapper {
     background-color: $dark-lighter;
     padding: 50px 100px;
-    @include grid(2, 10px);
-    grid-template-columns: 2fr 1fr;
 
-    .left {
-        @include flex();
-        flex-direction: column;
-        gap: 15px;
-    }
+    .row {
+        margin-top: 50px;
+        @include grid(2, 20px);
+        grid-template-columns: 2fr 1fr;
 
-    .rigth {
-        form {
-            @include flex();
-            flex-direction: column;
-            gap: 12px;
+        .left {
+            @include flex(column, $gap: 15px);
 
-            input {
-                width: 350px;
-                background-color: $dark;
-                border: 2px solid transparent;
+            .info {
+                margin-top: 30px;
 
-                &:hover {
-                    border-color: $warning;
-                }
-
-                &:focus {
-                    border-color: $warning;
-                    background-color: $warning-t;
-                    box-shadow: 0 0 5px $warning;
-
-                    &::placeholder {
-                        color: $light;
-                    }
-                }
-
-                &:invalid {
-                    background-color: $danger;
+                p {
+                    margin-top: 10px;
+                    line-height: 30px;
+                    color: lightgray;
+                    width: 80%;
                 }
             }
+        }
 
-            button {
-                width: 350px;
+        .rigth {
+            width: 700px;
+
+            form {
+                @include flex();
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+
+
+                .form-control {
+                    width: 80%;
+
+                    input {
+                        display: block;
+                        width: 100%;
+                        background-color: $dark;
+                        border: 2px solid transparent;
+                        padding: 20px;
+
+                        &:hover {
+                            border-color: $warning;
+                        }
+
+                        &:focus {
+                            border-color: $warning;
+                            background-color: $warning-t;
+                            box-shadow: 0 0 5px $warning;
+
+                            &::placeholder {
+                                color: $light;
+                            }
+                        }
+
+                        &:invalid {
+                            background-color: $danger;
+                        }
+
+                        &.phone-input {
+                            padding: 25px 40px;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 15px;
+                        background-color: $dark-lighter;
+
+                        &:hover {
+                            background-color: $warning-t;
+                        }
+                    }
+
+                    div {
+                        .flag-dropdown {
+                            background-color: $dark;
+                            border: 1px solid transparent;
+
+                            &.open {
+                                ul.country-list {
+                                    li.country {
+                                        span.country-name {
+                                            color: $dark;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                background-color: $dark;
+                                border: 1px solid $light;
+                            }
+
+                        }
+                    }
+                }
             }
         }
     }
-
 }

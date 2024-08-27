@@ -33,84 +33,80 @@ function Contacts() {
         // let value = e.target.value
         let { name, value } = e.target
         setState({ ...state, [name]: value })
-       
-    }
 
+    }
 
     function submit(e) { }
 
-   
-   
-  
-  
-    const handleChange = (phoneNumber) => {
-      const phoneNumberPattern = /^\d{10}$/;
-      return phoneNumberPattern.test(phoneNumber)
-    }
 
     return (
         <main className="contacts-page-wrapper">
+            <Heading size={1}>Контакты</Heading>
 
-            <div className="left">
-                <Heading size={1.2}>Контакты</Heading>
-                <div>
-                    <h5>Задайте нам любой вопрос</h5>
-                    <p>+7 701 776 24 20</p>
-                </div>
-                <div>
-                    <h5>Электронная почта</h5>
-                    <p>client@fonte.kz</p>
-                </div>
-                <div>
-                    <h5>Юридический адрес</h5>
-                    <p style={{ width: '400px' }}>
-                        050040/A15E3H4, проспект Аль-Фараби, 77/7​, 10 этаж, Алматы,
-                        Казахстан Z05T3D0, проспект Мангилик Ел, 55/20, Офисы 345-346,
-                        Астана, Казахстан
-                    </p>
-                </div>
-                <div className="bottom">
-                    <div>
-                        <img src={secondMap} />
+            <div className="row">
+                <div className="left">
+                    <div className="info">
+                        <h3>Задайте нам любой вопрос</h3>
+                        <p>+7 701 776 24 20</p>
                     </div>
-                    <div>
-                        <img src={mapImage} />
+                    <div className="info">
+                        <h3>Электронная почта</h3>
+                        <p>client@fonte.kz</p>
                     </div>
+                    <div className="info">
+                        <h3>Юридический адрес</h3>
+                        <p>
+                            050040/A15E3H4, проспект Аль-Фараби, 77/7​, 10 этаж, Алматы,
+                            Казахстан Z05T3D0, проспект Мангилик Ел, 55/20, Офисы 345-346,
+                            Астана, Казахстан
+                        </p>
+                    </div>
+
+                </div>
+
+                <div className="rigth">
+                    <form onSubmit={submit}>
+                        <div className="form-control">
+                            <input
+                                onChange={setInputValueIntoState}
+                                type="text" placeholder="Name" name="name"
+                                value={state.name}
+                                pattern="^[a-zA-Z_ ]+$"
+                            />
+                        </div>
+                        <div className="form-control">
+                            <input
+                                onChange={setInputValueIntoState}
+                                type="email" placeholder="Email" name="email"
+                                value={state.email}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <PhoneInput
+                                inputClass="phone-input"
+                                inputProps={{ required: true, name: 'phone' }}
+                                country={'uzb'}
+                                onChange={(val) => setState({ ...state, phone: val })}
+                                placeholder="Phone"
+                                value={state.phone}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <button className="warning-btn">Отправить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <div className="rigth">
-          
 
-                <form onSubmit={submit}>
-                    <div>
-                        <input
-                            onChange={setInputValueIntoState}
-                            type="text" placeholder="Name" name="name"
-                            value={state.name}
-                            pattern="^[a-zA-Z_ ]+$"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            onChange={setInputValueIntoState}
-                            type="email" placeholder="Email" name="email"
-                            value={state.email}
-                        />
-                    </div>
-                    <div>
-                        <PhoneInput
-                        country={'uzb'}
-                            onChange={handleChange}
-                             placeholder="Phone" name="phone"
-                            value={state.phone}
-                            pattern="^\+998[0-9]{9}$"
-                        />
-                    </div>
-                    <button className="warning-btn">Отправить</button>
-                </form>
+            <div className="maps">
+                <div>
+                    <img src={secondMap} />
+                </div>
+                <div>
+                    <img src={mapImage} />
+                </div>
             </div>
-
         </main>
     );
 }
