@@ -262,50 +262,11 @@
 @media (max-width: $small-screen) {
     .blog-details-wrapper {
         padding: 50px 20px;
-        .intro {
-            .title {
-               
-                .author-info {
-                    
-                    span.author {
-                        
-                    }
-                    span.date {
-
-                    }
-                }
-                img {
-
-                }
-                .subtitle-1,
-                .subtitle-2 {
-
-                }
-                .other {
-                    
-                    .row {
-                //   display: flex;
-                //   flex-direction: column;
-                grid-template-columns: 1fr;
-                    }
-                    .col {
-                        h2 {
-
-                        } a {
-
-                        }
-                    }
-                    .col {
-                        h2 {
-
-                        }
-                        a {
-                            
-                        }
-                    }
-                }
-            }
+       .other {
+        .row {
+            grid-template-columns: 1fr;
         }
+       }
     }
     
 }
