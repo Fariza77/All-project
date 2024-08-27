@@ -46,8 +46,10 @@ function Team(props) {
       <div className="section">
         <Heading size={1.2}> Сторонники и Партнеры</Heading>
         <br />
+        <div className="infos">
         <h2>SeedBox</h2>
         <h2>Freedom Finance</h2>
+        </div>
       </div>
     </main>
   );
