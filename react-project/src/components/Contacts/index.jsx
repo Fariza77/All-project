@@ -3,6 +3,9 @@ import Heading from "../common/Heading"
 import mapImage from '../../assets/images/contact/map.png'
 import secondMap from '../../assets/images/contact/map1.png'
 import { useState } from 'react'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 
 
 // RULE
@@ -30,10 +33,20 @@ function Contacts() {
         // let value = e.target.value
         let { name, value } = e.target
         setState({ ...state, [name]: value })
+       
     }
 
 
     function submit(e) { }
+
+    const [phoneNumber, setPhoneNumber] = useState({})
+   
+  
+  
+    const handleChange = (phoneNumber) => {
+      const phoneNumberPattern = /^\d{10}$/;
+      return phoneNumberPattern.test(phoneNumber)
+    }
 
     return (
         <main className="contacts-page-wrapper">
@@ -67,9 +80,7 @@ function Contacts() {
             </div>
 
             <div className="rigth">
-                <b>{state.name}</b> <br />
-                <b>{state.email}</b> <br />
-                <b>{state.phone}</b><br />
+          
 
                 <form onSubmit={submit}>
                     <div>
@@ -88,9 +99,10 @@ function Contacts() {
                         />
                     </div>
                     <div>
-                        <input
-                            onChange={setInputValueIntoState}
-                            type="tel" placeholder="Phone" name="phone"
+                        <PhoneInput
+                        country={'uzb'}
+                            onChange={handleChange}
+                             placeholder="Phone" name="phone"
                             value={state.phone}
                             pattern="^\+998[0-9]{9}$"
                         />
