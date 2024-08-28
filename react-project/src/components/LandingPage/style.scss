@@ -64,9 +64,8 @@
         .company-blog-wrapper {
             padding: 50px 100px;
         }
-        .lending-page-consultation-wrapper {
 
-        }
+        .lending-page-consultation-wrapper {}
     }
 }
 
@@ -75,9 +74,8 @@
         .company-blog-wrapper {
             padding: 50px;
         }
-        .lending-page-consultation-wrapper {
 
-        }
+        .lending-page-consultation-wrapper {}
     }
 }
 
@@ -91,21 +89,41 @@
                 gap: 100px 10px;
             }
         }
-        .lending-page-consultation-wrapper {
 
-        }
+        .lending-page-consultation-wrapper {}
     }
 }
 
 @media (max-width: $medium-screen) {
     .landing-page-wrapper {
         .values-section-wrapper {
-            padding: 50px 20px;
+            padding: 50px 0;
+
 
             .content {
-                gap: 50px 20px;
+                gap: 50px 0;
                 grid-template-columns: 1fr;
+
+
+                h1 {
+                    margin-left: 50px;
+                }
+
+                .value {
+                    padding-left: 15px;
+                    text-align: left;
+                    grid-template-columns: 1fr;
+
+                    img {
+                        position: relative;
+                        left: 5%;
+                        top: 0;
+                        transform: scale(1.5);
+                    }
+                }
             }
+
+
         }
 
         .lending-page-team-wrapper {
@@ -115,6 +133,7 @@
         .company-blog-wrapper {
             padding: 20px;
         }
+
         .lending-page-consultation-wrapper {
             padding: 0;
         }
@@ -125,36 +144,36 @@
 
 // @media (max-width: $xx-large-screen) {
 //     .landing-page-wrapper {
-        // .lending-page-consultation-wrapper {
+// .lending-page-consultation-wrapper {
 
-        // }
+// }
 //     }
 // }
 // @media (max-width: $x-large-screen) {
 //     .landing-page-wrapper {
 //       .lending-page-consultation-wrapper {
-            
+
 //         }
 //     }
 // }
 // @media (max-width: $large-screen) {
 //     .landing-page-wrapper {
 //         .lending-page-consultation-wrapper {
-            
+
 //         }
 //     }
 // }
 // @media (max-width: $medium-screen) {
 //     .landing-page-wrapper {
 //         .lending-page-consultation-wrapper {
-            
+
 //         }
 //     }
 // }
 // @media (max-width: $small-screen) {
 //     .landing-page-wrapper {
 //         .lending-page-consultation-wrapper {
-            
+
 //         }
 //     }
 // }

@@ -78,7 +78,6 @@
     }
 }
 
-
 @media (max-width: $xx-large-screen) {
     .footer-wrapper {
         footer.main-footer {
@@ -142,17 +141,22 @@
     .footer-wrapper {
         footer.main-footer {
             padding: 50px 10px;
+            position: relative;
 
             .left-side {
                 grid-template-columns: 1fr;
 
                 .footer-links {
                     position: relative;
-                    left: 100px;
+                    left: 30px;
                 }
             }
 
             .footer-social-media {
+                position: absolute;
+                right: 2px;
+                top: 35px;
+
                 span {
                     margin: 0 5px;
                 }

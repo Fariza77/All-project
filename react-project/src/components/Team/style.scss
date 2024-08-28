@@ -93,4 +93,12 @@
 
 }
 
-@media (max-width: $small-screen) {}
+@media (max-width: $small-screen) {
+    .team-page-wrapper {
+        .section {
+            .infos {
+                left: 0;
+            }
+        }
+    }
+}

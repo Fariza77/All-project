@@ -24,7 +24,7 @@ function Products() {
         {
           ProductsJSON?.map((product, index) => {
             return (
-              <>
+              <div key={index}>
                 <ProductsInfo image={images[product.id % images.length]}>
                   <h2>{product.title}</h2>
                   <p>{product.content}</p>
@@ -32,7 +32,7 @@ function Products() {
                     <button className="warning-btn">Подробнее</button>
                   </Link>
                 </ProductsInfo>
-              </>
+              </div>
             )
           })
         }

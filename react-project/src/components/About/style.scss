@@ -70,7 +70,7 @@
 
         .heading-wrapper,
         .content-wrapper {
-            padding: 0 50px;
+            padding: 0 10px;
             gap: 20px;
         }
     }
@@ -86,6 +86,7 @@
 
 @media (max-width: $small-screen) {
     .about-page-wrapper {
+
         .content-wrapper {
             grid-template-columns: 1fr;
         }
