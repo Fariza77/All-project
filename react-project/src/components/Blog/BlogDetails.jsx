@@ -22,12 +22,13 @@ export default function BlogDetails(props) {
     });
   }
 
-  useEffect(() => {
-    goToTopSmoothly()
-  }, [])
-
   let intro = blogObject.title.split(" ").slice(0, 3).join(" ")
   let image = images[parseInt(id) % images.length]
+
+  useEffect(() => {
+    goToTopSmoothly()
+    document.title = intro + "..."
+  }, [])
 
 
   return (

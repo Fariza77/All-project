@@ -13,9 +13,14 @@ import Marquee from "../common/Marquee"
 import Team from '../Team'
 import Consultation from "../Navigation/Footer/Consultation"
 import CompanyBlog from "./CompanyBlog"
+import { useEffect } from 'react'
 
 
 function LandingPage() {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+
   let images = [CImage1, CImage2, CImage3, CImage4, CImage5]
 
   return (

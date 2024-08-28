@@ -2,10 +2,13 @@ import "./style.scss"
 import Heading from "../common/Heading"
 import ImageAbout from "../../assets/images/about.png"
 import { TbLicense } from "react-icons/tb"
-import Marquee from '../common/Marquee'
-
+import { useEffect } from 'react'
 
 function About() {
+  useEffect(() => {
+    document.title = "About Us";
+  }, []);
+
   return (
     <main className="about-page-wrapper">
       <Heading size={1.4}>О нас</Heading>

@@ -31,80 +31,83 @@ function ProductDetails(props) {
 
     useEffect(() => {
         goToTopSmoothly()
+        document.title = "Product: " + product.title
     }, [])
 
     return (
-        <div className="product-details-wrapper">
-            <p className="intro">
-                Продукты / {product.title.split(" ").slice(0, 3).join(" ")}
-            </p>
-            <Heading size={1}>{product.title}</Heading>
-
-            <div className="image-wrapper">
-                <img src={images[product.id % images.length]} alt="Product image" />
-                <p className="content">
-                    {product.content}
+        <>
+            <div className="product-details-wrapper">
+                <p className="intro">
+                    Продукты / {product.title.split(" ").slice(0, 3).join(" ")}
                 </p>
-            </div>
-            <p className="content-content2">
-                {product.content2}
-            </p>
-            <p className="content-content3">
-                {product.content3}
-            </p>
+                <Heading size={1}>{product.title}</Heading>
 
-            <div className="documents">
-                <h2>Документы</h2>
-
-                <div className="action-buttons">
-                    <button className="download">
-                        <span className="left">
-                            <IoDocumentTextOutline />
-                        </span>
-                        <span className="middle">
-                            <h4>Документ 1</h4>
-                            <small>Размер 5мб</small>
-                        </span>
-                        <span className="right">
-                            <a href={Certificate} download={Certificate}>
-                                <MdDownloadForOffline />
-                            </a>
-                        </span>
-                    </button>
-
-                    <button className="download">
-                        <span className="left">
-                            <IoDocumentTextOutline />
-                        </span>
-                        <span className="middle">
-                            <h4>Документ 2</h4>
-                            <small>Размер 3.5мб</small>
-                        </span>
-                        <span className="right">
-                            <a href={Lycence} download={Lycence}>
-                                <MdDownloadForOffline />
-                            </a>
-                        </span>
-                    </button>
+                <div className="image-wrapper">
+                    <img src={images[product.id % images.length]} alt="Product image" />
+                    <p className="content">
+                        {product.content}
+                    </p>
                 </div>
+                <p className="content-content2">
+                    {product.content2}
+                </p>
+                <p className="content-content3">
+                    {product.content3}
+                </p>
 
-                <div className="lycences">
-                    <h1>Лицензии</h1>
+                <div className="documents">
+                    <h2>Документы</h2>
 
-                    <div className="content">
-                        <div className="first">
-                            <img src={Certificate} onClick={(e) => e.target.requestFullscreen()} />
-                            <p>Сертификат</p>
-                        </div>
-                        <div className="second">
-                            <img src={Lycence} onClick={(e) => e.target.requestFullscreen()} />
-                            <p>Лицензия</p>
+                    <div className="action-buttons">
+                        <button className="download">
+                            <span className="left">
+                                <IoDocumentTextOutline />
+                            </span>
+                            <span className="middle">
+                                <h4>Документ 1</h4>
+                                <small>Размер 5мб</small>
+                            </span>
+                            <span className="right">
+                                <a href={Certificate} download={Certificate}>
+                                    <MdDownloadForOffline />
+                                </a>
+                            </span>
+                        </button>
+
+                        <button className="download">
+                            <span className="left">
+                                <IoDocumentTextOutline />
+                            </span>
+                            <span className="middle">
+                                <h4>Документ 2</h4>
+                                <small>Размер 3.5мб</small>
+                            </span>
+                            <span className="right">
+                                <a href={Lycence} download={Lycence}>
+                                    <MdDownloadForOffline />
+                                </a>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div className="lycences">
+                        <h1>Лицензии</h1>
+
+                        <div className="content">
+                            <div className="first">
+                                <img src={Certificate} onClick={(e) => e.target.requestFullscreen()} />
+                                <p>Сертификат</p>
+                            </div>
+                            <div className="second">
+                                <img src={Lycence} onClick={(e) => e.target.requestFullscreen()} />
+                                <p>Лицензия</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <Consultation/>
-        </div>
+            <Consultation />
+        </>
     );
 }
 

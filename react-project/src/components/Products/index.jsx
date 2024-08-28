@@ -8,9 +8,14 @@ import img5 from "../../assets/images/img5.png"
 import ProductsInfo from "./ProductsInfo"
 import ProductsJSON from "../../db/products.json"
 import { Link } from "react-router-dom"
+import { useEffect } from 'react'
 
 function Products() {
   const images = [img1, img2, img3, img4, img5]
+
+  useEffect(() => {
+    document.title = "Products";
+  }, [])
 
   return (
     <main className="products-page-wrapper">

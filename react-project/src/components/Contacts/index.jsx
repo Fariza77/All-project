@@ -1,6 +1,6 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import MapComponent from "../common/MapComponent"
@@ -23,6 +23,10 @@ function Contacts() {
         email: "",
         phone: "+998",
     })
+
+    useEffect(() => {
+        document.title = "Contacts";
+    }, []);
 
 
     function setInputValueIntoState(e) {
