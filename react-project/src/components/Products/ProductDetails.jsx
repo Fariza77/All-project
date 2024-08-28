@@ -68,7 +68,7 @@ function ProductDetails(props) {
                                 <small>Размер 5мб</small>
                             </span>
                             <span className="right">
-                                <a href={Certificate} download={Certificate}>
+                                <a href={Certificate} download={"Certificate"}>
                                     <MdDownloadForOffline />
                                 </a>
                             </span>
@@ -83,7 +83,7 @@ function ProductDetails(props) {
                                 <small>Размер 3.5мб</small>
                             </span>
                             <span className="right">
-                                <a href={Lycence} download={Lycence}>
+                                <a href={Lycence} download={"Lycence"}>
                                     <MdDownloadForOffline />
                                 </a>
                             </span>
