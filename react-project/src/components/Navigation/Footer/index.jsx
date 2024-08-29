@@ -41,9 +41,10 @@ function Footer() {
         </div>
       </footer>
       <div className="section">
-        <h3>© 2022 • <span> Fonte</span> • All rights reserved</h3>
+        <h3>©  {new Date().toString()}•  Fonte • All rights reserved</h3>
+     
         <p>
-          Частная компания « <span>FONTE</span> Capital Ltd.», зарегистрированная по адресу:
+          Частная компания « FONTE Capital Ltd.», зарегистрированная по адресу:
           Есильский район, г. Нур-Султан, Мангилик Ел, 55/20, офис 345-346, БИН
           220140900035, осуществляет свою деятельность в соответствии с
           законодательством Международного Финансового центра «Астана» (МФЦА)
@@ -66,3 +67,6 @@ function Footer() {
 }
 
 export default Footer;
+
+
+//  date : new Date().toString()
