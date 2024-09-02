@@ -48,8 +48,9 @@ header {
             }
 
             .auth {
+                @include flex(row, center, center);
+
                 span {
-                    text-decoration: underline 1px solid snow;
                     cursor: pointer;
                     transform: scale(1.5);
 

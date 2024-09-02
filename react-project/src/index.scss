@@ -13,7 +13,7 @@ p {
 }
 
 a,
-button,
+button:not(.close-btn),
 input {
     border: none;
     outline: none;
