@@ -28,13 +28,20 @@
             border: 1px solid transparent;
             color: snow;
 
+            &.error {
+                border: 2px solid red;
+                box-shadow:
+                    1px 1px 10px red,
+                    -1px -1px 10px red,
+            }
+
             &::placeholder {
                 color: darkgray;
                 font-size: 0.8em;
             }
 
-            &:hover,
-            &:focus {
+            &:hover:not(.error),
+            &:focus:not(.error) {
                 border: 1px solid $warning;
                 box-shadow:
                     1px 1px 30px $warning-t,
@@ -51,8 +58,13 @@
             }
         }
 
-        input.input-error {
-            border: 2px solid red;
+        p {
+            &.error {
+                color: red;
+                font-size: 0.8em;
+                font-style: italic;
+                text-align: center;
+            }
         }
     }
 

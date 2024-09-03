@@ -21,7 +21,10 @@ function Authentication(props) {
                 <p>
                     <small>
                         {isRegistred ? 'Don\'t have an account?' : 'Already have an account?'}
-                        <button style={{ cursor: 'pointer' }} className='toggle-auth' onClick={() => setIsRegistred(!isRegistred)}>
+                        
+                        <button style={{ cursor: 'pointer' }} className='toggle-auth' 
+                            onClick={() => setIsRegistred(!isRegistred)}
+                        >
                             {isRegistred ? 'Create an account' : 'Log in'}
                         </button>
                     </small>

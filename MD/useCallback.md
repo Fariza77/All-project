@@ -1,6 +1,7 @@
 
 # useCallback
 ![useCallback](https://media.licdn.com/dms/image/D5612AQFEpnB2OXvfCQ/article-cover_image-shrink_600_2000/0/1687096796439?e=2147483647&v=beta&t=_hwwa9mte9Be3NEqW1SUz6E9HyoSA8U0Z1yeaK4i_oA)
+
 Why we use **useCallback** in React ?
 
 1. `Avoid Unnecessary Work`: When a parent component re-renders, it can cause its child components to re-render too. If you pass a function to a child component, React might think the function is new every time, causing the child to re-render. useCallback helps to keep the same function reference, so the child doesn't re-render unless it really needs to.

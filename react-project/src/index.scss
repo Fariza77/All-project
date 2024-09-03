@@ -37,3 +37,9 @@ input {
         transform: scale(0.8);
     }
 }
+
+
+::selection {
+    background-color: $warning;
+    color: $light;
+}
