@@ -2,6 +2,8 @@ import "./authContent.scss"
 import Heading from '../common/Heading'
 import { useState } from 'react'
 import { toast } from 'react-toastify';
+import { getUsersFromLocalStorage, addNewUserToLocalStorage } from "../../store/helpers.js"
+
 
 function Registration(props) {
     const [regState, setRegState] = useState({
@@ -27,24 +29,25 @@ function Registration(props) {
             toast.error("Passwords do not match", { theme: 'dark' })
             return
         }
+        const newUser = {
+            username: regState.username,
+            email: regState.email,
+            password: regState.password
+        }
         try {
-            if (await createNewAccount(e)) {
-                toast.success("Successfully created a new account for " + regState.username, { theme: 'dark' })
+            if (addNewUserToLocalStorage(newUser)) {
+                toast.success("Account successfully created. Now You can log in!", { theme: 'dark' })
+                props.setIsRegistered()
             } else {
-                throw new Error("Failed to create a new account")
+                toast.error("User already exists", { theme: 'dark' })
             }
         }
-        catch (e) {
-            toast.error("Failed to create a new account", { theme: 'dark' })
+        catch (error) {
+            toast.error(error, { theme: 'dark' })
         }
         finally {
             e.target.reset()
-            props.closeModal(false)
         }
-    }
-
-    async function createNewAccount(e) {
-        // TODO: Implement the function to create a new account
     }
 
     function handleState(e) {

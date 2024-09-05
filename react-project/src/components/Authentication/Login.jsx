@@ -1,10 +1,15 @@
-import Heading from '../common/Heading'
 import "./authContent.scss"
+import Heading from '../common/Heading'
 import { useState } from 'react'
+import { toast } from 'react-toastify';
+import { userExistsInDB } from "../../store/helpers";
 
 
 function Login(props) {
-    const [loginState, setloginState] = useState({})
+    const [loginState, setLoginState] = useState({
+        username: "",
+        password: "",
+    })
     const [formErrors, setFormErrors] = useState({
         username: "",
         password: "",
@@ -13,22 +18,31 @@ function Login(props) {
     async function submit(e) {
         e.preventDefault();
         const passwordPattern = /^[a-zA-Z0-9_$&]{5,}$/
+        let user = {
+            username: loginState.username,
+            password: loginState.password
+        }
 
-        if (!loginState.username || !loginState.password) {
-            alert("Please, fill in all fields")
+        if (user.username.length == 0 || user.password.length == 0) {
+            toast.error("Please, fill in all fields", { theme: "dark" })
             return
-        } else if (!passwordPattern.test(loginState.password)) {
+        } else if (!passwordPattern.test(user.password)) {
             setFormErrors({ ...formErrors, ['password']: "Symbols are not allowed except:($,&,_). Length 5+" })
             return
+        } else {
+            if (userExistsInDB(user)) {
+                toast.success("You have successfully logged in", { theme: "dark" })
+                props.closeModal()
+            } else {
+                toast.error("User not found with provided credentials", { theme: "dark" })
+            }
         }
-        await loginToAccount(e)
-        setloginState({})
-        e.target.reset()
+        setLoginState({
+            username: "",
+            password: "",
+        })
     }
 
-    async function loginToAccount(e) {
-        // TODO: Implement the function to login to an account
-    }
 
     function handleState(e) {
         const { name, value } = e.target
@@ -36,7 +50,7 @@ function Login(props) {
 
         // const key = e.target.name
         // const val = e.target.value
-        setloginState({ ...loginState, [name]: value })
+        setLoginState({ ...loginState, [name]: value })
     }
 
 
@@ -63,7 +77,7 @@ function Login(props) {
                 throw new Error('Unknown input field')
             }
         }
-        setFormErrors({ ...formErrors, [name]: error_msg })
+        return setFormErrors({ ...formErrors, [name]: error_msg })
     }
 
 
@@ -82,6 +96,7 @@ function Login(props) {
                         name='username'
                         className={formErrors.username.length > 0 ? 'error' : null}
                         onChange={handleState}
+                        value={loginState.username}
                     />
                     {
                         formErrors.username.length > 0 ?
@@ -98,6 +113,7 @@ function Login(props) {
                         name='password'
                         className={formErrors.password.length > 0 ? 'error' : null}
                         onChange={handleState}
+                        value={loginState.password}
                     />
                     {
                         formErrors.password.length > 0 ?
