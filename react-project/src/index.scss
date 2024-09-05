@@ -43,3 +43,8 @@ input {
     background-color: $warning;
     color: $light;
 }
+
+.toast-wrapper {
+    position: relative;
+    z-index: 9999;
+}

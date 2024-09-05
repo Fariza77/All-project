@@ -7,7 +7,7 @@
     left: 0;
     top: 0;
     background-color: rgb(0, 0, 0, 0.8);
-    z-index: 99999;
+    z-index: 9998;
     @include flex(row, center, center, 0);
 
     section.content {

@@ -1,6 +1,7 @@
 import "./authContent.scss"
 import Heading from '../common/Heading'
 import { useState } from 'react'
+import { toast } from 'react-toastify';
 
 function Registration(props) {
     const [regState, setRegState] = useState({
@@ -20,21 +21,21 @@ function Registration(props) {
         e.preventDefault();
 
         if (!regState.username || !regState.email || !regState.password || !regState.re_password) {
-            alert("Please, fill in all fields")
+            toast.error("Please, fill in all fields", { theme: 'dark' })
             return
         } else if (regState.password !== regState.re_password) {
-            alert("Passwords do not match")
+            toast.error("Passwords do not match", { theme: 'dark' })
             return
         }
         try {
             if (await createNewAccount(e)) {
-                alert("Successfully created a new account for " + regState.username)
+                toast.success("Successfully created a new account for " + regState.username, { theme: 'dark' })
             } else {
                 throw new Error("Failed to create a new account")
             }
         }
         catch (e) {
-            alert("Failed to create a new account")
+            toast.error("Failed to create a new account", { theme: 'dark' })
         }
         finally {
             e.target.reset()
@@ -65,7 +66,7 @@ function Registration(props) {
                 if (!usernamePattern.test(value)) {
                     error_msg = "Symbols are not allowed. Length 1-10"
                 }
-            } 
+            }
             else if (name == 'password') {
                 if (value.length >= 5 && !passwordPattern.test(value)) {
                     error_msg = "Symbols are not allowed except:($,&,_). Length 5+"
@@ -130,7 +131,7 @@ function Registration(props) {
                     {
                         formErrors.password.length > 0 ?
                             <p className='error'>{formErrors.password}</p>
-                        : null
+                            : null
                     }
                 </div>
                 <div className="form-control">
@@ -143,7 +144,7 @@ function Registration(props) {
                     {
                         formErrors.re_password.length > 0 ?
                             <p className='error'>{formErrors.re_password}</p>
-                        : null
+                            : null
                     }
                 </div>
                 <div className="form-control">
