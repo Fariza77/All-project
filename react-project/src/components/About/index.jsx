@@ -5,10 +5,12 @@ import { TbLicense } from "react-icons/tb"
 import { useEffect } from 'react'
 import Lycence from "../../assets/images/certificates/second.png"
 import Test from "./Test.jsx"
-import { useState } from "react"
+import { useContext } from "react"
+import { globalContext } from "../../store/index.js"
+
 
 function About() {
-  const [counter, setCounter] = useState(0);
+  const state = useContext(globalContext)
 
   useEffect(() => {
     document.title = "About Us";
@@ -33,9 +35,9 @@ function About() {
       </div>
 
       <div style={{ padding: "50px 100px" }}>
-        <h2>{counter}</h2>
-        <button className="warning-btn" onClick={() => setCounter(counter - 1)}>Decrement</button>
-        <button className="warning-btn" onClick={() => setCounter(counter + 1)}>Increment</button>
+        <h2>{state.counter}</h2>
+        <button className="warning-btn" onClick={() => state.dispatch({type: "DECREMENT"})}>Decrement</button>
+        <button className="warning-btn" onClick={() => state.dispatch({type: "INCREMENT"})}>Increment</button>
         <Test />
       </div>
     </main>

@@ -1,7 +1,26 @@
+function globalReducer(state, action) {
+    switch (action.type) {
+        // action.type === "SET_USER"
+        case 'SET_USER':
+            return { ...state,  user: action.payload }
+        case 'LOGOUT':
+            return { ...state,  user: {} }
+        case 'INCREMENT':
+            return { ...state,  counter: state.counter + 1 }
+        case 'DECREMENT':
+            return { ...state,  counter: state.counter - 1 }
+    }
+}
+// globalReducer(initialState, {type:"...",  payload: {"..."}})
+
+
+
+
 function getUsersFromLocalStorage() {
     let users = localStorage.getItem('users') ?? "[]"
     return JSON.parse(users) // [...]
 }
+
 function addNewUserToLocalStorage(new_user) {
     let { username, email } = new_user
     let existingUsers = getUsersFromLocalStorage()
@@ -34,5 +53,6 @@ function userExistsInDB({ username, password }) {
 export {
     getUsersFromLocalStorage,
     addNewUserToLocalStorage,
-    userExistsInDB
+    userExistsInDB,
+    globalReducer
 }

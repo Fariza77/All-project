@@ -3,9 +3,14 @@ import Heading from '../common/Heading'
 import { useState } from 'react'
 import { toast } from 'react-toastify';
 import { userExistsInDB } from "../../store/helpers";
+import { useContext } from "react"
+import { globalContext } from "../../store"
 
 
 function Login(props) {
+    const state = useContext(globalContext)
+
+
     const [loginState, setLoginState] = useState({
         username: "",
         password: "",
@@ -32,6 +37,7 @@ function Login(props) {
         } else {
             if (userExistsInDB(user)) {
                 toast.success("You have successfully logged in", { theme: "dark" })
+                state.dispatch({ type: "SET_USER", payload: user })
                 props.closeModal()
             } else {
                 toast.error("User not found with provided credentials", { theme: "dark" })

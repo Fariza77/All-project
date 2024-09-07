@@ -1,15 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
 import Heading from "../../common/Heading";
 import Authentication from "../../Authentication";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { globalContext } from "../../../store"
+import { toast } from "react-toastify";
 
 import "./style.scss"
 
 function Navbar() {
     const [authModal, setAuthModal] = useState(false);
+    const state = useContext(globalContext)
 
     function closeModal() {
         setAuthModal(false);
+    }
+
+    function logout() {
+        state.dispatch({ type: "LOGOUT" })
+        toast.success("You have successfully logged out", { theme: "dark" })
     }
 
     return (
@@ -32,12 +40,21 @@ function Navbar() {
                 </div>
 
                 <div className="auth">
-                    <div>
-                        <button className="warning-btn" onClick={() => setAuthModal(!authModal)}>Войти</button>
-                        {authModal ?
-                            <Authentication closeModal={closeModal} />
-                        : null}
-                    </div>
+                    {state.user.username ?
+                        <div className="logged-in-menu">
+                            <h4>{state.user.username}</h4>
+                            <div className="content">
+                                <button className="warning-btn" onClick={logout}>Выйти</button>
+                            </div>
+                        </div>
+                        :
+                        <div className="logged-out-menu">
+                            <button className="warning-btn" onClick={() => setAuthModal(!authModal)}>Войти</button>
+                            {authModal ?
+                                <Authentication closeModal={closeModal} />
+                                : null}
+                        </div>
+                    }
                     <a href="#">
                         <u>Рус</u>
                     </a>
