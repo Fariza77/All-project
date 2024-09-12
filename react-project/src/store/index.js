@@ -7,9 +7,7 @@ const globalContext = createContext()
 const initialState = {
     user: {},
     coordinates: {},
-
-    // test
-    counter: 0,
+    blogActivePage: "blogs",
 }
 
 

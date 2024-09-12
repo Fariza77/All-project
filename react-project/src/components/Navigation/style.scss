@@ -58,8 +58,7 @@ header {
                     cursor: pointer;
 
                     h4 {
-                        text-shadow: 1px 1px 1px $warning,
-                            -1px -1px 1px $warning;
+                        @include textShadow();
                     }
 
                     .content {

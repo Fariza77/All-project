@@ -5,10 +5,8 @@ function globalReducer(state, action) {
             return { ...state,  user: action.payload }
         case 'LOGOUT':
             return { ...state,  user: {} }
-        case 'INCREMENT':
-            return { ...state,  counter: state.counter + 1 }
-        case 'DECREMENT':
-            return { ...state,  counter: state.counter - 1 }
+        case "SET_BLOG_ACTIVE_PAGE":
+            return { ...state,  blogActivePage: action.payload }
     }
 }
 // globalReducer(initialState, {type:"...",  payload: {"..."}})

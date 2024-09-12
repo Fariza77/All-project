@@ -53,6 +53,11 @@ $small-screen: 750px;
     gap: $gap;
 }
 
+@mixin textShadow() {
+    text-shadow: 1px 1px 1px $warning,
+        -1px -1px 1px $warning;
+}
+
 // USAGE:
 // @include flex();
 // @include flex(column, center, center);

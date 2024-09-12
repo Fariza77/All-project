@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "admin",
+            "email": "admin@gmail.com",
+            "password": "qweqweqwe",
+            "role": "admin",
+            "image": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
+        }
+    ]
+}
