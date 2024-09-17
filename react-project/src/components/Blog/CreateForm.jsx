@@ -1,6 +1,7 @@
 import "./createFormStyle.scss";
 import { useEffect, useState } from "react";
 import AddImage from "../../assets/icons/addImage.png"
+import { BASE_URL } from '../../store'
 
 
 
@@ -16,15 +17,21 @@ function CreateForm(props) {
 
     function submit(e) {
         e.preventDefault();
+        console.log(form);
     }
 
     function handleStateForm(e) {
-        const { name, value } = e.target;
+        const { name, value } = e.target
 
         if (name !== "image") {
             setForm({ ...form, [name]: value })
         } else {
-            // set image properly
+            const imageFile = e.target.files[0]
+            const fileReader = new FileReader()
+            fileReader.readAsDataURL(imageFile)
+            fileReader.onload = (e) => {
+                setForm({ ...form,  image:fileReader.result })
+            }
         }
     }
 

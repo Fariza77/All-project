@@ -31,19 +31,17 @@ function Blog(props) {
                 }
             </Heading>
 
-            <div className="action-btns">
-                <button className="warning-btn active" name='blogs' onClick={activateSection}>
-                    Blogs
-                </button>
+            {state.user.username &&
+                <div className="action-btns">
+                    <button className="warning-btn active" name='blogs' onClick={activateSection}>
+                        Blogs
+                    </button>
 
-                {state.user.username &&
                     <button className="warning-btn" name='create' onClick={activateSection}>
                         Create New Blog
                     </button>
-                }
-            </div>
-
-
+                </div>
+            }
 
             {state.blogActivePage === "blogs" ?
                 blogJson.map((item, index) => {
