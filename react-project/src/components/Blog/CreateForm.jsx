@@ -61,12 +61,12 @@ function CreateForm(props) {
         if (name !== "image") {
             setForm({ ...form, [name]: value })
         } else {
-            const imageFile = e.target.files[0]
-            const fileReader = new FileReader()
-            fileReader.readAsDataURL(imageFile)
-            fileReader.onload = (e) => {
-                setForm({ ...form, image: fileReader.result })
-            }
+            // const imageFile = e.target.files[0]
+            // const fileReader = new FileReader()
+            // fileReader.readAsDataURL(imageFile)
+            // fileReader.onload = (e) => {
+            //     setForm({ ...form, image: fileReader.result })
+            // }
         }
     }
 
