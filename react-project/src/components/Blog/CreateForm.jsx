@@ -1,8 +1,15 @@
-import "./createFormStyle.scss";
-import { useEffect, useState } from "react";
+import "./createFormStyle.scss"
+import { useEffect, useState } from "react"
 import AddImage from "../../assets/icons/addImage.png"
 import { BASE_URL } from '../../store'
+import { toast } from 'react-toastify'
 
+
+// 1.  GET      - GET data from the server  =>  fetch(URL)
+// 2.  POST     - SEND data to the server   =>  fetch(URL, {method: "POST", body: JSON.stringify(data)})
+// 3.  PUT      - UPDATE data on the server =>  fetch(URL, {method: "PUT", body: JSON.stringify(data)})
+// 4.  PATCH    - PARTIAL UPDATE data       =>  fetch(URL, {method: "PATCH", body: JSON.stringify(data)})
+// 5.  DELETE   - DELETE data from the server => fetch(URL, {method: "DELETE"})
 
 
 function CreateForm(props) {
@@ -17,7 +24,23 @@ function CreateForm(props) {
 
     function submit(e) {
         e.preventDefault();
-        console.log(form);
+        try {
+            fetch(BASE_URL + "products", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: new Date().getTime(), ...form })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    toast.success("Blog created successfully")
+                })
+        }
+        catch (e) {
+            console.log(error)
+        }
     }
 
     function handleStateForm(e) {
@@ -30,7 +53,7 @@ function CreateForm(props) {
             const fileReader = new FileReader()
             fileReader.readAsDataURL(imageFile)
             fileReader.onload = (e) => {
-                setForm({ ...form,  image:fileReader.result })
+                setForm({ ...form, image: fileReader.result })
             }
         }
     }
