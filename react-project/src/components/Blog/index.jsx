@@ -4,15 +4,25 @@ import blogJson from '../../db/blog.json'
 import Item from './Item.jsx';
 import { useEffect, useContext } from 'react'
 import CreateForm from './CreateForm.jsx';
-import { globalContext } from "../../store"
+import { globalContext, BASE_URL } from "../../store"
 
 function Blog(props) {
     const state = useContext(globalContext);
 
     useEffect(() => {
         document.title = "Blog";
+        fetchBlogs()
     }, []);
 
+
+    function fetchBlogs() {
+        fetch(BASE_URL + "products")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                state.dispatch({ type: "SET_BLOGS", payload: data })
+            })
+    }
 
     function activateSection(e) {
         const { name } = e.target;
@@ -44,7 +54,7 @@ function Blog(props) {
             }
 
             {state.blogActivePage === "blogs" ?
-                blogJson.map((item, index) => {
+                [...state.blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)), ...blogJson].map((item, index) => {
                     return (
                         <div key={index} className="item-wrapper">
                             <Item item={item} />

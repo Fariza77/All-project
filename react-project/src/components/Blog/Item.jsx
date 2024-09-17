@@ -15,7 +15,7 @@ export default function Item(props) {
         <p>Менеджемент</p>
         <h2>{props.item.title}</h2>
         <div className="author">
-          <span className="name">{props.item.author},</span>
+          <span className="name">{props.item.author.username},</span>
           <span className="date">{props.item.date}</span>
         </div>
         <p className="subtitle1">{props.item.subtitle1}</p>

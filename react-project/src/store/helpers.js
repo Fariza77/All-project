@@ -3,6 +3,8 @@ function globalReducer(state, action) {
         // action.type === "SET_USER"
         case 'SET_USER':
             return { ...state,  user: action.payload }
+        case 'SET_BLOGS':
+            return { ...state,  blogs: action.payload }
         case 'LOGOUT':
             return { ...state,  user: {} }
         case "SET_BLOG_ACTIVE_PAGE":

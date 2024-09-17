@@ -7,6 +7,7 @@ const globalContext = createContext()
 
 const initialState = {
     user: {},
+    blogs: [],
     coordinates: {},
     blogActivePage: "blogs",
 }

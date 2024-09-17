@@ -1,7 +1,7 @@
 import "./createFormStyle.scss"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import AddImage from "../../assets/icons/addImage.png"
-import { BASE_URL } from '../../store'
+import { BASE_URL, globalContext } from '../../store'
 import { toast } from 'react-toastify'
 
 
@@ -21,6 +21,7 @@ function CreateForm(props) {
         content1: "",
         content2: ""
     })
+    const state = useContext(globalContext)
 
     function submit(e) {
         e.preventDefault();
@@ -36,11 +37,22 @@ function CreateForm(props) {
                 .then(data => {
                     console.log(data)
                     toast.success("Blog created successfully")
+                    state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: "blogs" })
                 })
         }
         catch (e) {
             console.log(error)
+            toast.error("Error creating blog")
         }
+
+        setForm({
+            author: props.user,
+            date: (new Date()).toLocaleDateString(),
+            title: "",
+            image: "",
+            content1: "",
+            content2: ""
+        })
     }
 
     function handleStateForm(e) {
