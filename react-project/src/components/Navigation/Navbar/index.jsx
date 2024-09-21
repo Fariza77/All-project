@@ -4,6 +4,7 @@ import Authentication from "../../Authentication";
 import { useState, useContext } from "react";
 import { globalContext } from "../../../store"
 import { toast } from "react-toastify";
+import { logoutUser } from '../../../store/helpers'
 
 import "./style.scss"
 
@@ -16,6 +17,7 @@ function Navbar() {
     }
 
     function logout() {
+        logoutUser()
         state.dispatch({ type: "LOGOUT" })
         toast.success("You have successfully logged out", { theme: "dark" })
     }

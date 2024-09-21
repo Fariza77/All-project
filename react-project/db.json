@@ -2,16 +2,9 @@
   "users": [
     {
       "id": "1",
-      "name": "admin",
+      "username": "admin",
       "email": "admin@gmail.com",
       "password": "qweqweqwe",
-      "image": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
-    },
-    {
-      "id": "fbd5",
-      "username": "admin2",
-      "email": "alisherqwexujanov163@gmail.com",
-      "password": "qweqwe",
       "image": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
     }
   ],

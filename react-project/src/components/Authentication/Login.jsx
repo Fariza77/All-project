@@ -2,7 +2,7 @@ import "./authContent.scss"
 import Heading from '../common/Heading'
 import { useState } from 'react'
 import { toast } from 'react-toastify';
-import { userExistsInDB } from "../../store/helpers";
+import { userExistsInDB, loginUser } from "../../store/helpers";
 import { useContext } from "react"
 import { globalContext } from "../../store"
 
@@ -35,7 +35,8 @@ function Login(props) {
             setFormErrors({ ...formErrors, ['password']: "Symbols are not allowed except:($,&,_). Length 5+" })
             return
         } else {
-            if (userExistsInDB(user)) {
+            if (await userExistsInDB(user)) {
+                loginUser(user)
                 toast.success("You have successfully logged in", { theme: "dark" })
                 state.dispatch({ type: "SET_USER", payload: user })
                 props.closeModal()
@@ -64,7 +65,7 @@ function Login(props) {
         // immediateFeedbackOnError
         // STEPS:
         // 1. Create patterns
-        const usernamePattern = /^[a-zA-Z0-9_]{1,10}$/
+        const usernamePattern = /^[a-zA-Z0-9\._\@-]{1,50}$/
         const passwordPattern = /^[a-zA-Z0-9_$&]{5,}$/
 
         // 2. Check if the value matches the pattern

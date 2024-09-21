@@ -2,7 +2,7 @@ import "./authContent.scss"
 import Heading from '../common/Heading'
 import { useState } from 'react'
 import { toast } from 'react-toastify';
-import { getUsersFromLocalStorage, addNewUserToLocalStorage } from "../../store/helpers.js"
+import { createNewUser, getUsersFromDB } from "../../store/helpers.js"
 import { BASE_URL } from "../../store"
 
 
@@ -22,12 +22,21 @@ function Registration(props) {
 
     async function submit(e) {
         e.preventDefault();
+        let existingUsers = await getUsersFromDB()
+        let existingEmails = existingUsers.map(user => user.email)
+
 
         if (!regState.username || !regState.email || !regState.password || !regState.re_password) {
             toast.error("Please, fill in all fields", { theme: 'dark' })
             return
         } else if (regState.password !== regState.re_password) {
             toast.error("Passwords do not match", { theme: 'dark' })
+            return
+        } else if (formErrors.username || formErrors.email || formErrors.password || formErrors.re_password) {
+            toast.error("Please, fill in all fields correctly", { theme: 'dark' })
+            return
+        } else if (existingEmails.includes(regState.email)) {
+            toast.error("Email already exists", { theme: 'dark' })
             return
         }
         const newUser = {
@@ -36,35 +45,15 @@ function Registration(props) {
             password: regState.password
         }
         try {
-            if (createNewUser(newUser)) {
-                toast.success("Account successfully created. Now You can log in!", { theme: 'dark' })
-                props.setIsRegistered()
-            } else {
-                toast.error("User already exists", { theme: 'dark' })
-            }
+            await createNewUser(newUser)
+            toast.success("Account successfully created. Now You can log in!", { theme: 'dark' })
+            props.setIsRegistered()
         }
         catch (error) {
             toast.error(error, { theme: 'dark' })
         }
         finally {
             e.target.reset()
-        }
-    }
-
-    async function createNewUser(newUser) {
-        try {
-            fetch(BASE_URL + "users", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newUser)
-            })
-                .then(response => console.log(response))
-        }
-        catch (error) {
-            console.log(error)
-            toast.error("Failed to create a new user", { theme: 'dark' })
         }
     }
 
