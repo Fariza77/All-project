@@ -31,7 +31,7 @@ async function createNewUser(newUser) {
 async function getUsersFromDB() {
     return fetch(BASE_URL + "users")
         .then(response => response.json())
-        .then(data => data )
+        .then(data => data)
         .catch(error => {
             console.log(error)
         })
@@ -65,23 +65,22 @@ async function userExistsInDB({ username, password }) {
     // NOTE:  username can be:   username or email
     let existingUsers = await getUsersFromDB()
 
-    
+
     let existingEmails = existingUsers.map(user => user.email)
     let existingUsernames = existingUsers.map(user => user.username)
-   
-    
+
     if (!existingEmails.includes(username) && !existingUsernames.includes(username)) {
         return false
-    } else {
-        for (let existing_user of existingUsers) {
-            if (existing_user.username == username && existing_user.password == password) {
-                return true
-            } else if (existing_user.email == username && existing_user.password == password) {
-                return true
-            }
-        }
-        return false
     }
+
+    for (let existing_user of existingUsers) {
+        if (existing_user.username == username && existing_user.password == password) {
+            return true
+        } else if (existing_user.email == username && existing_user.password == password) {
+            return true
+        }
+    }
+    return false
 }
 
 function loginUser(user) {
@@ -101,4 +100,16 @@ export {
     getUsersFromDB,
     userExistsInDB,
     globalReducer,
+}
+
+
+
+let x = 2
+
+if (1 == x) {
+    console.log(1)
+} else if (2 == x) {
+    console.log(2)
+} else {
+    console.log("I dont know it")
 }
