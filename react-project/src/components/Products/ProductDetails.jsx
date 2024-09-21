@@ -31,16 +31,16 @@ function ProductDetails(props) {
 
     useEffect(() => {
         goToTopSmoothly()
-        document.title = "Product: " + product.title
+        document.title = "Product: " + product?.title
     }, [])
 
     return (
         <>
             <div className="product-details-wrapper">
                 <p className="intro">
-                    Продукты / {product.title.split(" ").slice(0, 3).join(" ")}
+                    Продукты / {product?.title.split(" ").slice(0, 3).join(" ")}
                 </p>
-                <Heading size={1}>{product.title}</Heading>
+                <Heading size={1}>{product?.title}</Heading>
 
                 <div className="image-wrapper">
                     <img src={images[product.id % images.length]} alt="Product image" />

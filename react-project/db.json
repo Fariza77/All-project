@@ -5,9 +5,28 @@
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "qweqweqwe",
-      "role": "admin",
+      "image": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
+    },
+    {
+      "id": "fbd5",
+      "username": "admin2",
+      "email": "alisherqwexujanov163@gmail.com",
+      "password": "qweqwe",
       "image": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": "1726547572386",
+      "author": {
+        "username": "admin",
+        "password": "qweqweqwe"
+      },
+      "date": "9/17/2024",
+      "title": "Test",
+      "image": "",
+      "content1": "",
+      "content2": ""
+    }
+  ]
 }

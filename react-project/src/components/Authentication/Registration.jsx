@@ -3,6 +3,7 @@ import Heading from '../common/Heading'
 import { useState } from 'react'
 import { toast } from 'react-toastify';
 import { getUsersFromLocalStorage, addNewUserToLocalStorage } from "../../store/helpers.js"
+import { BASE_URL } from "../../store"
 
 
 function Registration(props) {
@@ -35,7 +36,7 @@ function Registration(props) {
             password: regState.password
         }
         try {
-            if (addNewUserToLocalStorage(newUser)) {
+            if (createNewUser(newUser)) {
                 toast.success("Account successfully created. Now You can log in!", { theme: 'dark' })
                 props.setIsRegistered()
             } else {
@@ -47,6 +48,23 @@ function Registration(props) {
         }
         finally {
             e.target.reset()
+        }
+    }
+
+    async function createNewUser(newUser) {
+        try {
+            fetch(BASE_URL + "users", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+                .then(response => console.log(response))
+        }
+        catch (error) {
+            console.log(error)
+            toast.error("Failed to create a new user", { theme: 'dark' })
         }
     }
 
