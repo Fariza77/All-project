@@ -23,6 +23,8 @@ function CreateForm(props) {
     })
     const state = useContext(globalContext)
 
+    // CRUD  =>  Create Read Update Delete
+
     function submit(e) {
         e.preventDefault();
         try {
