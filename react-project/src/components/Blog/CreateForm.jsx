@@ -18,8 +18,8 @@ function CreateForm(props) {
         date: (new Date()).toLocaleDateString(),
         title: "",
         image: "",
-        content1: "",
-        content2: ""
+        subtitle1: "",
+        subtitle2: ""
     })
     const state = useContext(globalContext)
 
@@ -28,12 +28,13 @@ function CreateForm(props) {
     function submit(e) {
         e.preventDefault();
         try {
-            fetch(BASE_URL + "products", {
+            const data = JSON.stringify({ ...form,  id: new Date().getTime() })
+            fetch(BASE_URL + "blogs", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ id: new Date().getTime(), ...form })
+                body: data
             })
                 .then(response => response.json())
                 .then(data => {
@@ -52,8 +53,8 @@ function CreateForm(props) {
             date: (new Date()).toLocaleDateString(),
             title: "",
             image: "",
-            content1: "",
-            content2: ""
+            subtitle1: "",
+            subtitle2: ""
         })
     }
 
@@ -99,11 +100,11 @@ function CreateForm(props) {
                 <div className="right">
                     <div className="form-control">
                         <label htmlFor="">Content</label>
-                        <textarea name="content1" placeholder="Content" onChange={handleStateForm} />
+                        <textarea name="subtitle1" placeholder="Content" onChange={handleStateForm} />
                     </div>
                     <div className="form-control">
                         <label htmlFor="">Additional information</label>
-                        <textarea name="content2" placeholder="Additional information" onChange={handleStateForm} />
+                        <textarea name="subtitle2" placeholder="Additional information" onChange={handleStateForm} />
                     </div>
                     <div className="form-control">
                         <button type="submit" className="warning-btn">

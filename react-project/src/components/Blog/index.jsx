@@ -1,6 +1,5 @@
 import './style.scss'
 import Heading from '../common/Heading'
-import blogJson from '../../db/blog.json'
 import Item from './Item.jsx';
 import { useEffect, useContext } from 'react'
 import CreateForm from './CreateForm.jsx';
@@ -16,7 +15,7 @@ function Blog(props) {
 
 
     function fetchBlogs() {
-        fetch(BASE_URL + "products")
+        fetch(BASE_URL + "blogs")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -54,7 +53,7 @@ function Blog(props) {
             }
 
             {state.blogActivePage === "blogs" ?
-                [...state.blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)), ...blogJson].map((item, index) => {
+                state.blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)).map((item, index) => {
                     return (
                         <div key={index} className="item-wrapper">
                             <Item item={item} />

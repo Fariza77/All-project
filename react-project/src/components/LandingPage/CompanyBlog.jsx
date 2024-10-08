@@ -1,9 +1,10 @@
 import CarouselComponent from "../common/CarouselComponent"
-import blogs from "../../db/blog.json"
 import Heading from "../common/Heading"
-
+import { useContext } from "react"
+import { globalContext } from "../../store"
 
 function CompanyBlog() {
+    const state = useContext(globalContext)
 
     // Separate blog items by 3 items per slide
     let breakPointItemsNumber = 3
@@ -22,7 +23,7 @@ function CompanyBlog() {
 
     function getSlides() {
         let slides = []
-        for (let item of blogs) {
+        for (let item of state.blogs) {
             let last_arr_slide = slides[slides.length - 1]
     
             if (!last_arr_slide) {
