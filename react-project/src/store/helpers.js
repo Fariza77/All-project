@@ -29,12 +29,13 @@ async function createNewUser(newUser) {
 
 
 async function getUsersFromDB() {
-    return fetch(BASE_URL + "users")
-        .then(response => response.json())
-        .then(data => data)
-        .catch(error => {
-            console.log(error)
-        })
+    try {
+        const response = await fetch(BASE_URL + "users")
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 // function getUsersFromLocalStorage() {
@@ -92,6 +93,11 @@ function logoutUser() {
     return true
 }
 
+async function fetchBlogs() {
+    const response = await fetch(BASE_URL + "blogs")
+    const data = await response.json()
+    return data
+}
 
 export {
     loginUser,
@@ -100,16 +106,5 @@ export {
     getUsersFromDB,
     userExistsInDB,
     globalReducer,
-}
-
-
-
-let x = 2
-
-if (1 == x) {
-    console.log(1)
-} else if (2 == x) {
-    console.log(2)
-} else {
-    console.log("I dont know it")
+    fetchBlogs
 }

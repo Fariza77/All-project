@@ -29,7 +29,7 @@ export default function BlogDetails(props) {
     }, [])
 
     function fetchBlog() {
-        fetch(BASE_URL + "blogs/" + parseInt(id))
+        fetch(BASE_URL + "blogs/" + String(id))
             .then(response => response.json())
             .then(data => {
                 setBlogObject(data)

@@ -2,6 +2,7 @@ import "./createFormStyle.scss"
 import { useEffect, useState, useContext } from "react"
 import AddImage from "../../assets/icons/addImage.png"
 import { BASE_URL, globalContext } from '../../store'
+import { fetchBlogs } from '../../store/helpers.js'
 import { toast } from 'react-toastify'
 
 
@@ -25,10 +26,10 @@ function CreateForm(props) {
 
     // CRUD  =>  Create Read Update Delete
 
-    function submit(e) {
+    async function submit(e) {
         e.preventDefault();
         try {
-            const data = JSON.stringify({ ...form,  id: new Date().getTime() })
+            const data = JSON.stringify({ ...form, id: String(new Date().getTime()) })
             fetch(BASE_URL + "blogs", {
                 method: "POST",
                 headers: {
@@ -42,6 +43,8 @@ function CreateForm(props) {
                     toast.success("Blog created successfully")
                     state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: "blogs" })
                 })
+            const payload = await fetchBlogs()
+            state.dispatch({ type: "SET_BLOGS", payload })
         }
         catch (e) {
             console.log(error)

@@ -4,23 +4,19 @@ import Item from './Item.jsx';
 import { useEffect, useContext } from 'react'
 import CreateForm from './CreateForm.jsx';
 import { globalContext, BASE_URL } from "../../store"
+import { fetchBlogs } from "../../store/helpers.js"
 
 function Blog(props) {
     const state = useContext(globalContext);
 
     useEffect(() => {
         document.title = "Blog";
-        fetchBlogs()
+        fetchBlogsFn()
     }, []);
 
-
-    function fetchBlogs() {
-        fetch(BASE_URL + "blogs")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                state.dispatch({ type: "SET_BLOGS", payload: data })
-            })
+    async function fetchBlogsFn() {
+        const data = await fetchBlogs()
+        state.dispatch({ type: "SET_BLOGS", payload: data })
     }
 
     function activateSection(e) {
@@ -53,6 +49,7 @@ function Blog(props) {
             }
 
             {state.blogActivePage === "blogs" ?
+                state.blogs.length > 0 &&
                 state.blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)).map((item, index) => {
                     return (
                         <div key={index} className="item-wrapper">
