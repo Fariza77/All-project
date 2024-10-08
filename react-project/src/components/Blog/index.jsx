@@ -21,9 +21,6 @@ function Blog(props) {
 
     function activateSection(e) {
         const { name } = e.target;
-        const btns = document.querySelectorAll(".blog-page-wrapper .action-btns button")
-        btns.forEach(btn => { btn.classList.remove("active") })
-        e.target.classList.add("active")
         state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: name })
     }
 
@@ -38,13 +35,13 @@ function Blog(props) {
 
             {state.user.username &&
                 <div className="action-btns">
-                    <button className="warning-btn active" name='blogs' onClick={activateSection}>
-                        Blogs
-                    </button>
+                    <button className={state.blogActivePage === 'blogs' ? "active warning-btn" : "warning-btn"}
+                        name='blogs' onClick={activateSection}
+                    > Blogs </button>
 
-                    <button className="warning-btn" name='create' onClick={activateSection}>
-                        Create New Blog
-                    </button>
+                    <button className={state.blogActivePage !== 'blogs' ? "active warning-btn" : "warning-btn"}
+                        name='create' onClick={activateSection}
+                    > Create New Blog </button>
                 </div>
             }
 

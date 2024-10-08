@@ -38,13 +38,13 @@ function CreateForm(props) {
                 body: data
             })
                 .then(response => response.json())
-                .then(data => {
+                .then(async (data) => {
                     console.log(data)
                     toast.success("Blog created successfully")
+                    const payload = await fetchBlogs()
+                    state.dispatch({ type: "SET_BLOGS", payload:payload })
                     state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: "blogs" })
                 })
-            const payload = await fetchBlogs()
-            state.dispatch({ type: "SET_BLOGS", payload })
         }
         catch (e) {
             console.log(error)
