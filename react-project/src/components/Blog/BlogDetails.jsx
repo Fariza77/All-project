@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { BASE_URL } from '../../store'
 import './blogDetails.scss'
@@ -8,10 +8,14 @@ import BlogImg2 from "../../assets/images/blog-2.png"
 import BlogImg3 from "../../assets/images/blog-3.png"
 import BlogImg4 from "../../assets/images/img3.png"
 import BlogImg5 from "../../assets/images/img5.png"
+import { FaTrashAlt } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 
 export default function BlogDetails(props) {
     const { id } = useParams()
+    const navigate = useNavigate()
+
     const images = [BlogImg1, BlogImg2, BlogImg3, BlogImg4, BlogImg5]
     const [blogObject, setBlogObject] = useState({})
 
@@ -41,11 +45,31 @@ export default function BlogDetails(props) {
         return title?.split(" ").slice(0, 3).join(" ")
     }
 
+    function requestDeleteBlog(e) {
+        if (confirm("Are you sure to delete this blog?")) {
+            fetch(BASE_URL + "blogs/" + String(id), {
+                method: "DELETE"
+            })
+                .then(response => console.log(response))
+            toast.success("Blog deleted successfully", {theme: "dark"})
+            navigate("/blog")
+        } else {
+            return
+        }
+    }
+
     return (
         <div className="blog-details-wrapper">
             <p className='intro'>Блог / {getInro(blogObject.title)}</p>
 
             <h1 className='title'>{blogObject.title}</h1>
+
+            <button className="warning-btn delete-btn"
+                onClick={requestDeleteBlog}
+            >
+                <FaTrashAlt />
+                Delete
+            </button>
 
             <p className='author-info'>
                 <span className='author'>{blogObject.author?.username}</span>,

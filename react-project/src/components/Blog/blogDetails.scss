@@ -15,6 +15,21 @@
         margin: 20px 0 10px 0;
     }
 
+    .warning-btn {
+        @include flex(row, center, center, 10px);
+        padding: 3px 20px;
+        font-size: 1em;
+        float: right;
+        position: relative;
+        bottom: 50px;
+
+        svg {
+            position: relative;
+            top: 9px;
+            font-size: 1em;
+        }
+    }
+
     .author-info {
         color: $light;
         margin-top: 50px;
@@ -24,9 +39,7 @@
         }
     }
 
-    .img {
-        
-    }
+    .img {}
 
     .subtitle-1,
     .subtitle-2 {
@@ -63,145 +76,117 @@
 @media (max-width: $xx-large-screen) {
     .blog-details-wrapper {
         padding: 50px 250px;
+
         p.intro {
             h1.title {
                 p.author-info {
-                    span.author {
+                    span.author {}
 
-                    }
-                    span.date {
+                    span.date {}
+                }
 
-                    }
-                }
-                img {
+                img {}
 
-                }
-                p.subtitle-1 {
-                    
-                }
-                p.subtitle-2 {
+                p.subtitle-1 {}
 
-                }
+                p.subtitle-2 {}
+
                 .other {
-                    h2 {
+                    h2 {}
 
-                    }
-                    .row {
+                    .row {}
 
-                    }
                     .col {
-                        h2 {
+                        h2 {}
 
-                        } a {
-
-                        }
+                        a {}
                     }
+
                     .col {
-                        h2 {
+                        h2 {}
 
-                        }
-                        a {
-
-                        }
+                        a {}
                     }
                 }
             }
         }
     }
 }
+
 @media (max-width: $x-large-screen) {
     .blog-details-wrapper {
         padding: 50px 150px;
+
         p.intro {
             h1.title {
                 p.author-info {
-                    span.author {
+                    span.author {}
 
-                    }
-                    span.date {
+                    span.date {}
+                }
 
-                    }
-                }
-                img {
+                img {}
 
-                }
-                p.subtitle-1 {
-                    
-                }
-                p.subtitle-2 {
+                p.subtitle-1 {}
 
-                }
+                p.subtitle-2 {}
+
                 .other {
-                   
-                    h2 {
 
-                    }
-                    .row {
-                       
-                    }
+                    h2 {}
+
+                    .row {}
+
                     .col {
-                        h2 {
+                        h2 {}
 
-                        } a {
-
-                        }
+                        a {}
                     }
-                    .col {
-                        h2 {
 
-                        }
-                        a {
-                            
-                        }
+                    .col {
+                        h2 {}
+
+                        a {}
                     }
                 }
             }
         }
     }
 }
+
 @media (max-width: $large-screen) {
     .blog-details-wrapper {
         padding: 50px 100px;
+
         p.intro {
             h1.title {
                 p.author-info {
-                    span.author {
+                    span.author {}
 
-                    }
-                    span.date {
+                    span.date {}
+                }
 
-                    }
-                }
-                img {
+                img {}
 
-                }
-                p.subtitle-1 {
-                    
-                }
-                p.subtitle-2 {
+                p.subtitle-1 {}
 
-                }
+                p.subtitle-2 {}
+
                 .other {
-                    h2 {
+                    h2 {}
 
-                    }
-                    .row {
+                    .row {}
 
-                    }
                     .col {
-                        h2 {
+                        h2 {}
 
-                        } a {
-
-                        }
+                        a {}
                     }
-                    .col {
-                        h2 {
 
-                        }
-                        a {
-                            
-                        }
+                    .col {
+                        h2 {}
+
+                        a {}
                     }
                 }
             }
@@ -209,49 +194,40 @@
     }
 
 }
+
 @media (max-width: $medium-screen) {
     .blog-details-wrapper {
         padding: 50px 50px;
+
         p.intro {
             h1.title {
                 p.author-info {
-                    span.author {
+                    span.author {}
 
-                    }
-                    span.date {
+                    span.date {}
+                }
 
-                    }
-                }
-                img {
+                img {}
 
-                }
-                p.subtitle-1 {
-                    
-                }
-                p.subtitle-2 {
+                p.subtitle-1 {}
 
-                }
+                p.subtitle-2 {}
+
                 .other {
-                    h2 {
+                    h2 {}
 
-                    }
-                    .row {
+                    .row {}
 
-                    }
                     .col {
-                        h2 {
+                        h2 {}
 
-                        } a {
-
-                        }
+                        a {}
                     }
-                    .col {
-                        h2 {
 
-                        }
-                        a {
-                            
-                        }
+                    .col {
+                        h2 {}
+
+                        a {}
                     }
                 }
             }
@@ -259,14 +235,16 @@
     }
 
 }
+
 @media (max-width: $small-screen) {
     .blog-details-wrapper {
         padding: 50px 20px;
-       .other {
-        .row {
-            grid-template-columns: 1fr;
+
+        .other {
+            .row {
+                grid-template-columns: 1fr;
+            }
         }
-       }
     }
 
 }
