@@ -4,6 +4,7 @@ import AddImage from "../../assets/icons/addImage.png"
 import { BASE_URL, globalContext } from '../../store'
 import { fetchBlogs } from '../../store/helpers.js'
 import { toast } from 'react-toastify'
+import BlogForm from './BlogForm.jsx';
 
 
 // 1.  GET      - GET data from the server  =>  fetch(URL)
@@ -78,44 +79,12 @@ function CreateForm(props) {
 
     return (
         <div className="blog-create-form-wrapper">
-            <form onSubmit={submit}>
-                <div className="left">
-                    <div className="form-control">
-                        <label htmlFor="blog-title">Blog title</label>
-                        <input id="blog-title" type="text" placeholder="Blog title" name="title" onChange={handleStateForm} />
-                    </div>
-                    <div className="form-control">
-                        <div className="intro">
-                            <label>Author: <span>{form.author.username}</span></label>
-                            <label>Date:   <span>{form.date}</span></label>
-                        </div>
-                    </div>
-
-                    <div className="form-control">
-                        <label htmlFor="blog-image">Blog image</label>
-                        <div className="nft-image-wrapper">
-                            <input id="blog-image" type="file" onChange={handleStateForm} name='image' />
-                            <img src={AddImage} alt="" />
-                            <small>Upload or drag here</small>
-                        </div>
-                    </div>
-                </div>
-                <div className="right">
-                    <div className="form-control">
-                        <label htmlFor="">Content</label>
-                        <textarea name="subtitle1" placeholder="Content" onChange={handleStateForm} />
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="">Additional information</label>
-                        <textarea name="subtitle2" placeholder="Additional information" onChange={handleStateForm} />
-                    </div>
-                    <div className="form-control">
-                        <button type="submit" className="warning-btn">
-                            Create Blog
-                        </button>
-                    </div>
-                </div>
-            </form>
+            <BlogForm 
+                submit={submit}
+                handleStateForm={handleStateForm}
+                form={form}
+                submitButtonText="Create"
+            />
         </div>
     );
 }

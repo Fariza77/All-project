@@ -10,6 +10,7 @@ import BlogImg4 from "../../assets/images/img3.png"
 import BlogImg5 from "../../assets/images/img5.png"
 import { FaTrashAlt } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import { FaEdit } from "react-icons/fa";
 
 
 export default function BlogDetails(props) {
@@ -57,6 +58,7 @@ export default function BlogDetails(props) {
             return
         }
     }
+    function requestUpdateBlog(e) {}
 
     return (
         <div className="blog-details-wrapper">
@@ -69,6 +71,12 @@ export default function BlogDetails(props) {
             >
                 <FaTrashAlt />
                 Delete
+            </button>
+            <button className="warning-btn update-btn"
+                onClick={requestUpdateBlog}
+            >
+                <FaEdit />
+                Update
             </button>
 
             <p className='author-info'>
