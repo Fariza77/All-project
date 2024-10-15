@@ -9,21 +9,34 @@ import Products from './Products'
 import ProductDetails from './Products/ProductDetails.jsx'
 import Contacts from './Contacts'
 import BlogDetails from "./Blog/BlogDetails";
+import FetchUser from "./FetchUser";
+
+
+const UserFetchedLandingPage = FetchUser(LandingPage)
+const UserFetchedAbout = FetchUser(About)
+const UserFetchedTeam = FetchUser(Team)
+const UserFetchedBlog = FetchUser(Blog)
+const UserFetchedBlogDetails = FetchUser(BlogDetails)
+const UserFetchedProducts = FetchUser(Products)
+const UserFetchedProductDetails = FetchUser(ProductDetails)
+const UserFetchedContacts = FetchUser(Contacts)
+const UserFetchedNoPage = FetchUser(NoPage)
+
 
 function AllComponents() {
     const location = useLocation();
     return (
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Navigation />} >
-                <Route index element={<LandingPage />} />
-                <Route path="about" element={<About />} />
-                <Route path="team" element={<Team />} />
-                <Route path="blog" element={<Blog />} />
-                <Route path="blog/:id" element={<BlogDetails />} />
-                <Route path="products" element={<Products />} />
-                <Route path="products/:id" element={<ProductDetails />} />
-                <Route path="contacts" element={<Contacts />} />
-                <Route path="*" element={<NoPage />} />
+                <Route index element={<UserFetchedLandingPage />} />
+                <Route path="about" element={<UserFetchedAbout />} />
+                <Route path="team" element={<UserFetchedTeam />} />
+                <Route path="blog" element={<UserFetchedBlog />} />
+                <Route path="blog/:id" element={<UserFetchedBlogDetails />} />
+                <Route path="products" element={<UserFetchedProducts />} />
+                <Route path="products/:id" element={<UserFetchedProductDetails />} />
+                <Route path="contacts" element={<UserFetchedContacts />} />
+                <Route path="*" element={<UserFetchedNoPage />} />
             </Route>
         </Routes>
     );
