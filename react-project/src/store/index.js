@@ -24,6 +24,7 @@ const initialState = {
     blogs: [],
     coordinates: {},
     blogActivePage: "blogs",
+    loaded: true,
 }
 
 

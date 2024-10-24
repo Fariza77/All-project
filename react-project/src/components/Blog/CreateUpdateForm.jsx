@@ -1,10 +1,10 @@
-import "./createFormStyle.scss"
+import "./CreateUpdateFormStyle.scss"
 import { useEffect, useState, useContext } from "react"
-import AddImage from "../../assets/icons/addImage.png"
-import { BASE_URL, globalContext } from '../../store'
+import { BASE_URL, globalContext } from '../../store/index.js'
 import { fetchBlogs } from '../../store/helpers.js'
 import { toast } from 'react-toastify'
 import BlogForm from './BlogForm.jsx';
+import Heading from "../common/Heading/index.jsx"
 
 
 // 1.  GET      - GET data from the server  =>  fetch(URL)
@@ -14,14 +14,14 @@ import BlogForm from './BlogForm.jsx';
 // 5.  DELETE   - DELETE data from the server => fetch(URL, {method: "DELETE"})
 
 
-function CreateForm(props) {
+function CreateUpdateForm(props) {
     const [form, setForm] = useState({
         author: props.user,
         date: (new Date()).toLocaleDateString(),
-        title: "",
-        image: "",
-        subtitle1: "",
-        subtitle2: ""
+        title: props.blogObject ? props.blogObject.title : "",
+        image: props.blogObject ? props.blogObject.image : "",
+        subtitle1: props.blogObject ? props.blogObject.subtitle1 : "",
+        subtitle2: props.blogObject ? props.blogObject.subtitle2 : ""
     })
     const state = useContext(globalContext)
 
@@ -30,26 +30,37 @@ function CreateForm(props) {
     async function submit(e) {
         e.preventDefault();
         try {
-            const data = JSON.stringify({ ...form, id: String(new Date().getTime()) })
-            fetch(BASE_URL + "blogs", {
-                method: "POST",
+            let data = { ...form }
+            if (!props.updateMode) {
+                data.id = String(new Date().getTime())
+            }
+            const URL = BASE_URL + (props.updateMode ? "blogs/" + props.blogObject.id : "blogs")
+            const METHOD = props.updateMode ? "PUT" : "POST"
+
+            fetch(URL, {
+                method: METHOD,
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: data
+                body: JSON.stringify(data)
             })
                 .then(response => response.json())
                 .then(async (data) => {
-                    console.log(data)
-                    toast.success("Blog created successfully")
+                    toast.success(`Blog ${props.updateMode ? "updated" : "created"} successfully`)
                     const payload = await fetchBlogs()
-                    state.dispatch({ type: "SET_BLOGS", payload:payload })
-                    state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: "blogs" })
+                    state.dispatch({ type: "SET_BLOGS", payload: payload })
+
+                    if (props.updateMode) {
+                        props.goBack()
+                        window.location.reload()
+                    } else {
+                        state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: "blogs" })
+                    }
                 })
         }
         catch (e) {
-            console.log(error)
-            toast.error("Error creating blog")
+            console.log(e)
+            toast.error(`Error ${props.updateMode ? "updating" : "creating"}  blog`)
         }
 
         setForm({
@@ -78,15 +89,25 @@ function CreateForm(props) {
     }
 
     return (
-        <div className="blog-create-form-wrapper">
-            <BlogForm 
+        <div className="blog-create-update-form-wrapper">
+            {
+                props.updateMode &&
+                <div className="action-btns">
+                    <button className="warning-btn back-btn" onClick={props.goBack}>
+                        <span style={{ marginRight: "5px" }}>&lArr;</span> Go back
+                    </button>
+                </div>
+            }
+
+            <Heading size={1}>{props.updateMode ? "Update" : "Create"} Blog</Heading>
+            <BlogForm
                 submit={submit}
                 handleStateForm={handleStateForm}
                 form={form}
-                submitButtonText="Create"
+                submitButtonText={props.updateMode ? "Update" : "Create"}
             />
         </div>
     );
 }
 
-export default CreateForm;
+export default CreateUpdateForm;

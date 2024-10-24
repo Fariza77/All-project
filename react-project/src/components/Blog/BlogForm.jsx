@@ -1,6 +1,11 @@
 import AddImage from "../../assets/icons/addImage.png"
+import { useEffect } from "react";
 
 function BlogForm(props) {
+    useEffect(() => {
+        console.log(props.form)
+    }, [])
+
     return (
         <form onSubmit={props.submit}>
             <div className="left">
@@ -28,11 +33,11 @@ function BlogForm(props) {
             <div className="right">
                 <div className="form-control">
                     <label htmlFor="">Content</label>
-                    <textarea name="subtitle1" placeholder="Content" onChange={props.handleStateForm} value={props.form.content1} />
+                    <textarea name="subtitle1" placeholder="Content" onChange={props.handleStateForm} value={props.form.subtitle1} />
                 </div>
                 <div className="form-control">
                     <label htmlFor="">Additional information</label>
-                    <textarea name="subtitle2" placeholder="Additional information" onChange={props.handleStateForm} value={props.form.content2} />
+                    <textarea name="subtitle2" placeholder="Additional information" onChange={props.handleStateForm} value={props.form.subtitle2} />
                 </div>
                 <div className="form-control">
                     <button type="submit" className="warning-btn">

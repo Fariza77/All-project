@@ -11,6 +11,8 @@ function globalReducer(state, action) {
             return { ...state, user: {} }
         case "SET_BLOG_ACTIVE_PAGE":
             return { ...state, blogActivePage: action.payload }
+        case "SET_LOADED":
+            return { ...state, loaded: action.payload }
     }
 }
 // globalReducer(initialState, {type:"...",  payload: {"..."}})

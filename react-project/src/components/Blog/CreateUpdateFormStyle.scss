@@ -2,7 +2,7 @@
 
 
 
-.blog-create-form-wrapper {
+.blog-create-update-form-wrapper {
     label {
         text-align: left;
         display: block;
@@ -20,6 +20,11 @@
             display: inline-block;
             font-size: 16px;
         }
+    }
+
+    button.back-btn {
+        position: relative;
+        bottom: 50px;
     }
 
     form {

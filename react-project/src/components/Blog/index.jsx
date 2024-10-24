@@ -2,9 +2,29 @@ import './style.scss'
 import Heading from '../common/Heading'
 import Item from './Item.jsx';
 import { useEffect, useContext } from 'react'
-import CreateForm from './CreateForm.jsx';
+import CreateUpdateForm from './CreateUpdateForm.jsx';
 import { globalContext, BASE_URL } from "../../store"
 import { fetchBlogs } from "../../store/helpers.js"
+
+
+function BlogItems({ blogs }) {
+    return (
+        <>
+            <Heading size={1}>Blog</Heading>
+            {
+                blogs.length > 0 &&
+                blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)).map((item, index) => {
+                    return (
+                        <div key={index} className="item-wrapper">
+                            <Item item={item} />
+                        </div>
+                    )
+                })
+
+            }
+        </>
+    )
+}
 
 function Blog(props) {
     const state = useContext(globalContext);
@@ -27,11 +47,7 @@ function Blog(props) {
 
     return (
         <div className="blog-page-wrapper">
-            <Heading size={1}>
-                {state.blogActivePage === "blogs" ?
-                    "Blog" : "Create New Blog"
-                }
-            </Heading>
+
 
             {state.user.username &&
                 <div className="action-btns">
@@ -46,16 +62,9 @@ function Blog(props) {
             }
 
             {state.blogActivePage === "blogs" ?
-                state.blogs.length > 0 &&
-                state.blogs.sort((a, b) => parseInt(b.id) - parseInt(a.id)).map((item, index) => {
-                    return (
-                        <div key={index} className="item-wrapper">
-                            <Item item={item} />
-                        </div>
-                    )
-                })
+                <BlogItems blogs={state.blogs} />
                 :
-                <CreateForm user={state.user} />
+                <CreateUpdateForm user={state.user} />
             }
         </div>
     )
