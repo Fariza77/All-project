@@ -44,11 +44,8 @@ function Blog(props) {
         state.dispatch({ type: "SET_BLOG_ACTIVE_PAGE", payload: name })
     }
 
-
     return (
         <div className="blog-page-wrapper">
-
-
             {state.user.username &&
                 <div className="action-btns">
                     <button className={state.blogActivePage === 'blogs' ? "active warning-btn" : "warning-btn"}
