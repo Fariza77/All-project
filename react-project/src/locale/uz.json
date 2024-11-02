@@ -4,6 +4,13 @@
         "team": "Jamoa",
         "blog": "Blog",
         "productrs": "Mahsulotlar",
-        "contacts": "Aloqa"
+        "contacts": "Aloqa",
+        "br": "------------------------------------------------------------------------------------",
+        "about-page": {
+            "team-info": "Bizning jamoa muvaffaqiyatli bir nechta investitsiya bozorlarida faoliyat yuritadi. Bu bozorlar vositalarining tanlovi bizga mijozlar kapitalini muvaffaqiyatli saqlash va oshirishga imkon beradi.",
+            "team-info2": "Fonte bilan sheriklikda ishlab chiqilayotganlar, amaliy investorlar va yangi imkoniyatlarni boshlashda bo'lgan shaxslar ham bo'lishlari mumkin. Bizning yurisdiksiyamiz - Xalqaro Moliyaviy Markaz «Astana» (IFCA). Qulay soliq sharoitlari va tartibot siyosatlari investitsiya maqsadlarini erishish uchun zarur erkinlik va afzalliklarni ta'minlaydi.",
+            "team-info3": "Fonte Capital LTD bilan sheriklikda bo'lgan investorlar faqat sinovdan o'tgan strategiyalardan foydalanishlari mumkin emas, balki shaxsiy investitsiya echimlarini birgalikda ishlab chiqishlari ham mumkin.",
+            "licences": "Litsenziyalar"
+        }
     }
 }

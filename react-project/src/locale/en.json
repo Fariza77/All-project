@@ -4,6 +4,13 @@
         "team": "Team",
         "blog": "Blog",
         "productrs": "Products",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "br": "------------------------------------------------------------------------------------",
+        "about-page": {
+            "team-info": "Our Team successfully operates on several investment markets. The wealth of choice of tools of these markets allows Us to successfully preserve and increase the capital of clients.",
+            "team-info2": "Both professional investors and private individuals who are just beginning to discover new perspectives can enter into partnership with Fonte. Our jurisdiction is the International Financial Center «Astana» (IFCA). Comfortable tax conditions and regulatory policies provide the necessary freedoms and advantages to achieve investment goals.",
+            "team-info3": "In partnership with Fonte Capital LTD, investors have the opportunity to use not only proven strategies, but also jointly develop personal investment solutions.",
+            "licences": "Licences"
+        }
     }
 }
