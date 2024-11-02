@@ -13,6 +13,8 @@ function globalReducer(state, action) {
             return { ...state, blogActivePage: action.payload }
         case "SET_LOADED":
             return { ...state, loaded: action.payload }
+        case "CHANGE_LANG":
+            return { ...state, currentLanguage: action.currentLanguage }
     }
 }
 // globalReducer(initialState, {type:"...",  payload: {"..."}})

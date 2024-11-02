@@ -1,1 +1,45 @@
 @import "../../../assets/styles/settings";
+
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+
+    &>a {
+        // Current language
+        color: $light;
+    }
+
+    .drp-content {
+        display: none;
+        position: absolute;
+        right: -20px;
+        top: 38px;
+        width: 100px;
+        z-index: 999;
+
+        a {
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            background-color: $light;
+            color: $dark;
+
+            &.selected,
+            &:hover {
+                background-color: $warning;
+                color: snow;
+            }
+
+            &.selected {
+                background-color: $success;
+            }
+        }
+    }
+
+    &:hover {
+        .drp-content {
+            display: inline-block;
+        }
+    }
+}
